@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="900" viewBox="0 0 800 900">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f274a"/>
+      <stop offset="100%" stop-color="#1a7fbf"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7d4b0"/>
+      <stop offset="100%" stop-color="#e3a674"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="900" rx="42" fill="url(#bg)"/>
+  <circle cx="400" cy="360" r="240" fill="#f4f6fb" opacity="0.12"/>
+  <circle cx="650" cy="210" r="90" fill="#fff" opacity="0.08"/>
+  <ellipse cx="400" cy="740" rx="220" ry="90" fill="#07111f" opacity="0.28"/>
+  <path d="M285 312c0-116 82-198 184-198 102 0 183 82 183 198 0 122-81 223-183 223-102 0-184-101-184-223Z" fill="url(#skin)"/>
+  <path d="M235 333c20-118 104-192 210-192 126 0 212 77 221 197-24-40-58-70-116-79-31-5-68-7-104-5-47 2-91 15-132 38-28 16-51 29-79 41Z" fill="#162b4a" opacity="0.75"/>
+  <path d="M312 287c26-48 76-78 126-78 63 0 106 30 132 90-15-8-33-15-52-18-22-4-40-5-57-4-25 1-47 8-71 16-9 3-21 5-34 7-25 4-28 0-44-13Z" fill="#2c1c12" opacity="0.83"/>
+  <path d="M274 363c20 59 63 92 126 92 62 0 103-33 125-92-24 13-52 20-85 20-35 0-70-8-98-20-17-7-36-7-68 0Z" fill="#f1c091"/>
+  <path d="M302 540c27-36 63-58 112-58 49 0 89 22 120 58-23 26-53 41-94 41-46 0-84-16-138-41Z" fill="#ffcc8c" opacity="0.95"/>
+  <path d="M273 398c18 28 47 44 90 44 44 0 73-17 92-44-18 8-38 12-59 12-29 0-54-6-74-16-11-5-24-7-49 4Z" fill="#f2b883"/>
+  <circle cx="344" cy="365" r="15" fill="#fff"/>
+  <circle cx="462" cy="365" r="15" fill="#fff"/>
+  <circle cx="344" cy="365" r="7" fill="#0d1f35"/>
+  <circle cx="462" cy="365" r="7" fill="#0d1f35"/>
+  <path d="M335 446c24 20 55 28 86 28 31 0 62-8 86-28" stroke="#8d3c1b" stroke-width="12" stroke-linecap="round"/>
+  <path d="M314 486c20 24 44 37 86 37 42 0 69-13 94-37" stroke="#7da8ff" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+  <path d="M250 203c35-44 85-71 152-71 57 0 103 18 154 56" stroke="#7ad8ff" stroke-width="10" stroke-linecap="round" opacity="0.65"/>
+  <circle cx="614" cy="201" r="22" fill="#fff" opacity="0.18"/>
+  <circle cx="640" cy="236" r="12" fill="#ffc64f" opacity="0.35"/>
+  <text x="400" y="810" text-anchor="middle" font-family="Arial, sans-serif" font-size="56" fill="#f6f8ff" font-weight="700">LUIS</text>
+</svg>

@@ -7,12 +7,7 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body class="index-page">
-    <div id="particles" aria-hidden="true"></div>
-    <div class="clouds" aria-hidden="true">
-        <span class="cloud cloud-1"></span>
-        <span class="cloud cloud-2"></span>
-        <span class="cloud cloud-3"></span>
-    </div>
+    <div id="particles"></div>
     <header class="index-header">
         <div class="header-content">
             <span class="header-badge">Misión anime • aprendizaje</span>
@@ -49,6 +44,9 @@
             <span class="battle-line battle-line-1"></span>
             <span class="battle-line battle-line-2"></span>
             <span class="battle-line battle-line-3"></span>
+            <span class="cloud cloud-1"></span>
+            <span class="cloud cloud-2"></span>
+            <span class="cloud cloud-3"></span>
         </div>
         <section class="game-panel">
             <div class="image-card">
@@ -126,7 +124,7 @@
 
         <section class="photo-gallery" aria-label="Galería visual">
             <div class="gallery-card">
-                <img src="img/foto.jpg" alt="Foto de Luis Alexander Yugsi Parra">
+                <img src="img/foto.svg" alt="Foto de Luis Alexander Yugsi Parra">
                 <div class="gallery-caption">
                     <h3>Mi foto</h3>
                     <p>Momento de energía, disciplina y propósito.</p>
@@ -180,9 +178,24 @@
         const rank = document.getElementById('rank');
         const missionText = document.getElementById('mission-text');
         const body = document.body;
-        const particlesContainer = document.getElementById('particles');
+        const particles = document.getElementById('particles');
 
         let chakra = 0;
+
+        function createStarParticle() {
+            const particle = document.createElement('span');
+            particle.className = 'star-particle';
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.setProperty('--size', `${8 + Math.random() * 16}px`);
+            particle.style.setProperty('--delay', `${Math.random() * 8}s`);
+            particle.style.opacity = `${0.2 + Math.random() * 0.8}`;
+            particles.appendChild(particle);
+        }
+
+        for (let i = 0; i < 40; i += 1) {
+            createStarParticle();
+        }
 
         function createChakraBurst(x, y) {
             const burst = document.createElement('div');
@@ -192,20 +205,6 @@
             body.appendChild(burst);
 
             burst.addEventListener('animationend', () => burst.remove());
-        }
-
-        for (let i = 0; i < 24; i += 1) {
-            const particle = document.createElement('span');
-            particle.className = 'particle';
-            particle.style.left = `${Math.random() * 100}%`;
-            particle.style.top = `${Math.random() * 100}%`;
-            particle.style.width = `${2 + Math.random() * 4}px`;
-            particle.style.height = `${2 + Math.random() * 4}px`;
-            particle.style.animationDelay = `${Math.random() * 6}s`;
-            particle.style.animationDuration = `${4 + Math.random() * 6}s`;
-            particle.style.opacity = `${0.2 + Math.random() * 0.8}`;
-            particle.style.background = ['#7ad8ff', '#ffe59a', '#ffffff'][Math.floor(Math.random() * 3)];
-            particlesContainer.appendChild(particle);
         }
 
         missionBtn.addEventListener('click', (event) => {
