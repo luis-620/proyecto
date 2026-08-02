@@ -455,7 +455,7 @@ boruto.style.transform="translateY(0px)";
         TITULO
 =========================================*/
 
-const mensajes=[
+ const mensajesTitulo = [
 
 "⚡ Boruto Web",
 
@@ -471,11 +471,11 @@ let indice=0;
 
 setInterval(()=>{
 
-document.title=mensajes[indice];
+document.title=mensajesTitulo[indice];
 
 indice++;
 
-if(indice>=mensajes.length){
+if(indice>=mensajesTitulo.length){
 
 indice=0;
 
