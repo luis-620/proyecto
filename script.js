@@ -108,30 +108,28 @@ link.classList.add("activo");
 /*=========================================
         EFECTO SCROLL
 =========================================*/
+const elementosRevelar = document.querySelectorAll(".card,.hero-left,.hero-center,.hero-right");
 
-const revelar=document.querySelectorAll(".card,.hero-left,.hero-center,.hero-right");
+const mostrarElementos = () => {
 
-const mostrarElementos=()=>{
+    const alto = window.innerHeight;
 
-const alto=window.innerHeight;
+    elementosRevelar.forEach(el => {
 
-revelar.forEach(el=>{
+        const posicion = el.getBoundingClientRect().top;
 
-const posicion=el.getBoundingClientRect().top;
+        if (posicion < alto - 100) {
 
-if(posicion<alto-100){
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
 
-el.style.opacity="1";
+        }
 
-el.style.transform="translateY(0)";
-
-}
-
-});
+    });
 
 };
 
-window.addEventListener("scroll",mostrarElementos);
+window.addEventListener("scroll", mostrarElementos);
 
 mostrarElementos();
 
