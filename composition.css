@@ -1,0 +1,4 @@
+/* Composición de escritorio: la ilustración mide 1024×1536; se limita su ancho para conservar la cabeza y el rasengan dentro del hero. */
+@media(min-width:1001px){.hero{min-height:790px}.hero-art{height:760px!important}.hero-art .boruto{width:min(520px,43vw)!important;right:2%!important;bottom:-45px!important}.hero-art .moon{top:10px!important;right:33%!important;width:135px}.hero-art .rasengan{width:160px;height:160px;right:17%!important;bottom:12%!important}.hero-copy{padding-bottom:20px}.scroll{top:185px}}
+@media(min-width:1500px){.hero-art .boruto{width:540px!important;right:0!important}.hero-art .rasengan{right:15%!important}}
+@media(max-width:1000px){.hero-art .boruto{width:min(500px,67vw)!important;right:-4%!important;bottom:-20px!important}}
