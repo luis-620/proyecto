@@ -1,0 +1,2 @@
+/* Mantiene los efectos del panel y permite llegar al menú completo. */
+.sidebar{overflow-x:hidden!important;overflow-y:auto!important;scroll-behavior:smooth}.sidebar::-webkit-scrollbar{width:5px}.sidebar::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:8px;box-shadow:0 0 8px var(--cyan)}
