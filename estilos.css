@@ -178,7 +178,7 @@ header{
 
     position:fixed;
 
-    width:100%;
+    width:90%;
 
     top:0;
 
@@ -293,20 +293,37 @@ nav i{
             HERO
 =========================================*/
 
+
 .hero{
-
     min-height:100vh;
-
     display:grid;
-
-    grid-template-columns:1fr 1.2fr 1fr;
-
-    align-items:center;
-
-    gap:60px;
-
-    padding:150px 8% 100px;
-
+    grid-template-columns:1fr 1.1fr 1fr;
+    align-items:start;      /* antes center */
+    gap:70px;
+    padding:120px 8% 80px;
+}
+.hero-center{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    padding-top:40px;
+}
+.hero-center h1{
+    font-size:72px;
+    line-height:0.9;
+    margin-bottom:15px;
+}
+.hero-center h2{
+    color:#ffd23f;
+    font-size:38px;
+    margin-bottom:25px;
+}
+.hero-center p{
+    max-width:500px;
+    line-height:1.9;
+    font-size:20px;
+    color:#d9d9d9;
+    text-align:justify;
 }
 
 /*=========================================
@@ -334,7 +351,7 @@ nav i{
     justify-content:center;
 
     align-items:center;
-    right: 520px;
+
     
 
 }
