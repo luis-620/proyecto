@@ -6,13 +6,17 @@ window.addEventListener("load",()=>{
 
     const loader=document.getElementById("loader");
 
-    setTimeout(()=>{
+    if(loader){
 
-        loader.style.opacity="0";
+        setTimeout(()=>{
 
-        loader.style.visibility="hidden";
+            loader.style.opacity="0";
+            loader.style.visibility="hidden";
+            loader.style.display="none";
 
-    },1800);
+        },1800);
+
+    }
 
 });
 
