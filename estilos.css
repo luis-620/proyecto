@@ -1,197 +1,188 @@
-/*==================================================
-        BORUTO WEB
-        Luis Alexander Yugsi Parra
-===================================================*/
+/*=========================================
+        FUENTE Y CONFIGURACIÓN GENERAL
+=========================================*/
 
-/*========================
-    GOOGLE FONT
-=========================*/
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/*========================
-      VARIABLES
-=========================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:'Poppins',sans-serif;
+}
 
 :root{
 
     --azul:#00b7ff;
-    --azul2:#4dd8ff;
-    --oscuro:#050814;
-    --gris:#141b29;
+    --azul2:#4fd4ff;
+    --morado:#8d4dff;
+    --oscuro:#050816;
+    --gris:#151b2d;
     --blanco:#ffffff;
-    --amarillo:#ffd84d;
-    --glass:rgba(255,255,255,.08);
-
-    --sombra:0 0 25px rgba(0,183,255,.5);
-
-}
-
-/*========================
- RESET
-=========================*/
-
-*{
-
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-
-}
-
-html{
-
-    scroll-behavior:smooth;
+    --dorado:#ffd54a;
 
 }
 
 body{
 
-    font-family:'Poppins',sans-serif;
-
-    background:#050814;
-
+    background:#050816;
     color:white;
-
     overflow-x:hidden;
 
 }
 
-/*========================
-    SCROLL
-=========================*/
+/*=========================================
+            FONDO
+=========================================*/
 
-::-webkit-scrollbar{
+body::before{
 
-    width:10px;
+    content:"";
+    position:fixed;
+    inset:0;
 
-}
+    background:
+    linear-gradient(rgba(4,8,25,.82),rgba(3,6,18,.88)),
+    url("img/fondo.jpg");
 
-::-webkit-scrollbar-track{
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 
-    background:#0b1020;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:linear-gradient(var(--azul),#003cff);
-
-    border-radius:20px;
+    z-index:-3;
 
 }
 
-/*========================
-    FONDO
-=========================*/
+/*=========================================
+        EFECTO DE LUZ
+=========================================*/
 
-.background{
+body::after{
+
+    content:"";
 
     position:fixed;
 
-    width:100%;
+    width:900px;
+    height:900px;
 
-    height:100vh;
+    left:-250px;
+    top:-250px;
 
-    left:0;
+    border-radius:50%;
 
-    top:0;
+    background:radial-gradient(circle,
+    rgba(0,180,255,.15),
+    transparent 70%);
+
+    animation:luz 8s infinite alternate;
+
+    z-index:-2;
+
+}
+
+@keyframes luz{
+
+    to{
+
+        transform:translate(300px,150px);
+
+    }
+
+}
+
+/*=========================================
+            PARTÍCULAS
+=========================================*/
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
 
     overflow:hidden;
 
-    z-index:-100;
+    z-index:-1;
 
 }
 
-.bg{
+/*=========================================
+            LOADER
+=========================================*/
 
-    position:absolute;
+#loader{
 
-    width:100%;
+    position:fixed;
 
-    height:100%;
+    inset:0;
 
-    object-fit:cover;
+    background:#02040d;
 
-    filter:brightness(.18);
+    display:flex;
 
-}
+    flex-direction:column;
 
-/*========================
-      PORTAL
-=========================*/
+    justify-content:center;
 
-.portal{
+    align-items:center;
 
-    position:absolute;
+    gap:25px;
 
-    width:650px;
-
-    right:8%;
-
-    top:12%;
-
-    opacity:.35;
-
-    animation:girar 35s linear infinite;
+    z-index:99999;
 
 }
 
-/*========================
-     CHAKRA
-=========================*/
+.loader-circle{
 
-.energia{
+    width:90px;
 
-    position:absolute;
+    height:90px;
 
-    width:900px;
+    border-radius:50%;
 
-    left:-180px;
+    border:7px solid rgba(255,255,255,.15);
 
-    bottom:-120px;
+    border-top:7px solid var(--azul);
 
-    opacity:.18;
-
-    animation:pulse 6s infinite;
+    animation:girar 1s linear infinite;
 
 }
 
-/*========================
-       HOJAS
-=========================*/
+@keyframes girar{
 
-.hojas{
+    to{
 
-    position:absolute;
+        transform:rotate(360deg);
 
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    opacity:.15;
-
-    animation:flotar 30s linear infinite;
+    }
 
 }
 
-/*========================
-      HEADER
-=========================*/
+#loader h2{
+
+    color:white;
+
+    letter-spacing:2px;
+
+    font-size:22px;
+
+}
+
+/*=========================================
+            MENÚ
+=========================================*/
 
 header{
 
     position:fixed;
 
+    width:100%;
+
     top:0;
 
     left:0;
-
-    width:100%;
-
-    padding:20px 70px;
 
     display:flex;
 
@@ -199,9 +190,11 @@ header{
 
     align-items:center;
 
-    background:rgba(5,8,20,.55);
+    padding:18px 70px;
 
-    backdrop-filter:blur(20px);
+    background:rgba(8,12,28,.75);
+
+    backdrop-filter:blur(18px);
 
     border-bottom:1px solid rgba(255,255,255,.08);
 
@@ -209,37 +202,27 @@ header{
 
 }
 
-/*========================
-       LOGO
-=========================*/
-
 .logo{
 
     display:flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:12px;
 
-    font-size:24px;
-
-    font-weight:700;
+    font-size:30px;
 
     color:var(--azul);
 
-    text-shadow:0 0 20px cyan;
+    font-weight:700;
 
 }
 
-.logo i{
+.logo span{
 
-    font-size:32px;
+    font-size:28px;
 
 }
-
-/*========================
-        MENU
-=========================*/
 
 nav ul{
 
@@ -247,119 +230,90 @@ nav ul{
 
     list-style:none;
 
-    gap:25px;
+    gap:40px;
 
 }
 
-nav ul li{
-
-    position:relative;
-
-}
-
-nav ul li a{
-
-    color:white;
+nav a{
 
     text-decoration:none;
 
-    padding:12px 18px;
+    color:white;
 
-    border-radius:10px;
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+nav a:hover{
+
+    color:var(--azul);
+
+    text-shadow:0 0 15px cyan;
+
+}
+
+nav i{
+
+    margin-left:8px;
+
+}
+
+#btnMision{
+
+    padding:14px 26px;
+
+    border:none;
+
+    border-radius:35px;
+
+    background:linear-gradient(90deg,
+    var(--azul),
+    var(--morado));
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:700;
 
     transition:.4s;
 
-    display:flex;
-
-    gap:8px;
-
-    align-items:center;
-
 }
 
-nav ul li a:hover{
+#btnMision:hover{
 
-    color:var(--azul2);
+    transform:translateY(-4px);
 
-    background:rgba(255,255,255,.08);
-
-    box-shadow:var(--sombra);
+    box-shadow:0 0 30px cyan;
 
 }
-
-/*========================
-      SUBMENU
-=========================*/
-
-.submenu{
-
-    position:absolute;
-
-    top:60px;
-
-    left:0;
-
-    width:170px;
-
-    background:#111b31;
-
-    border-radius:12px;
-
-    display:none;
-
-    overflow:hidden;
-
-}
-
-.dropdown:hover .submenu{
-
-    display:block;
-
-}
-
-.submenu li{
-
-    width:100%;
-
-}
-
-.submenu li a{
-
-    display:block;
-
-    padding:14px;
-
-}
-
-/*========================
-      HERO
-=========================*/
+/*=========================================
+            HERO
+=========================================*/
 
 .hero{
 
-    width:100%;
-
     min-height:100vh;
 
-    display:flex;
+    display:grid;
+
+    grid-template-columns:1fr 1.2fr 1fr;
 
     align-items:center;
 
-    justify-content:space-around;
+    gap:60px;
 
-    padding:150px 8% 70px;
+    padding:150px 8% 100px;
 
 }
 
-/*========================
-      BORUTO
-=========================*/
+/*=========================================
+        FOTO CON CHAKRA
+=========================================*/
 
-.hero-image{
-
-    position:relative;
-
-    width:45%;
+.hero-left{
 
     display:flex;
 
@@ -367,152 +321,186 @@ nav ul li a:hover{
 
 }
 
-.boruto{
+.energia{
 
-    width:480px;
+    position:relative;
+
+    width:430px;
+
+    height:430px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.circulo1,
+.circulo2,
+.circulo3{
+
+    position:absolute;
+
+    border-radius:50%;
+
+}
+
+.circulo1{
+
+    width:430px;
+
+    height:430px;
+
+    border:3px solid rgba(0,183,255,.5);
+
+    animation:rotar1 12s linear infinite;
+
+    box-shadow:
+    0 0 60px cyan,
+    inset 0 0 40px cyan;
+
+}
+
+.circulo2{
+
+    width:360px;
+
+    height:360px;
+
+    border:2px dashed rgba(255,255,255,.3);
+
+    animation:rotar2 8s linear infinite;
+
+}
+
+.circulo3{
+
+    width:300px;
+
+    height:300px;
+
+    background:radial-gradient(circle,
+    rgba(0,183,255,.25),
+    rgba(141,77,255,.08),
+    transparent);
+
+    filter:blur(10px);
+
+    animation:pulsar 3s infinite;
+
+}
+
+.foto{
+
+    position:relative;
+
+    width:280px;
+
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid cyan;
 
     z-index:5;
 
-    animation:respirar 5s infinite;
+    box-shadow:
+
+    0 0 60px cyan,
+
+    0 0 120px rgba(0,183,255,.5);
 
 }
 
-.chakra{
+/*=========================================
+        INFORMACIÓN
+=========================================*/
 
-    position:absolute;
+.hero-center{
 
-    width:620px;
-
-    top:-40px;
-
-    animation:girar 25s linear infinite;
-
-    opacity:.75;
-
-}
-
-.jougan{
-
-    position:absolute;
-
-    width:120px;
-
-    right:110px;
-
-    top:90px;
-
-    animation:pulse 2s infinite;
-
-}
-
-/*========================
-      SHURIKEN
-=========================*/
-
-.shuriken{
-
-    position:absolute;
-
-    width:70px;
-
-    animation:girar 5s linear infinite;
-
-}
-
-.sh1{
-
-    top:50px;
-
-    left:40px;
-
-}
-
-.sh2{
-
-    bottom:40px;
-
-    right:60px;
-
-}
-
-/*========================
-        KUNAI
-=========================*/
-
-.kunai{
-
-    position:absolute;
-
-    width:130px;
-
-    bottom:30px;
-
-    left:80px;
-
-    transform:rotate(-30deg);
-
-}
-
-/*========================
-      HERO INFO
-=========================*/
-
-.hero-info{
-
-    width:48%;
+    animation:aparecer 1.3s;
 
 }
 
 .etiqueta{
 
-    background:linear-gradient(90deg,#008cff,#00f2ff);
-
-    padding:8px 20px;
-
-    border-radius:30px;
-
     display:inline-block;
 
-    margin-bottom:20px;
+    padding:10px 22px;
+
+    border-radius:40px;
+
+    background:linear-gradient(90deg,
+    var(--azul),
+    var(--morado));
 
     font-weight:600;
-
-}
-
-.hero-info h1{
-
-    font-size:58px;
-
-    line-height:70px;
-
-    margin-bottom:15px;
-
-}
-
-.hero-info h1 span{
-
-    color:var(--azul2);
-
-}
-
-.hero-info h2{
-
-    color:#ffd84d;
 
     margin-bottom:25px;
 
 }
 
-.hero-info p{
+.hero-center h3{
+
+    font-size:28px;
+
+    color:#9fdfff;
+
+}
+
+.hero-center h1{
+
+    font-size:72px;
+
+    line-height:78px;
+
+    margin:15px 0;
+
+    font-weight:800;
+
+}
+
+.hero-center h1 span{
+
+    display:block;
+
+    color:var(--azul);
+
+    text-shadow:
+
+    0 0 20px cyan,
+
+    0 0 40px cyan;
+
+}
+
+.hero-center h2{
+
+    color:var(--dorado);
+
+    margin:20px 0;
+
+    font-size:28px;
+
+}
+
+.hero-center p{
 
     font-size:18px;
 
     line-height:34px;
 
-    text-align:justify;
+    color:#dddddd;
+
+    margin-top:25px;
 
 }
-/*========================================
+
+/*=========================================
         BOTONES
 =========================================*/
 
@@ -526,381 +514,62 @@ nav ul li a:hover{
 
 }
 
-.botones button{
+.btn1,
+.btn2{
 
-    padding:15px 35px;
+    text-decoration:none;
 
-    border:none;
+    padding:16px 34px;
 
-    border-radius:50px;
+    border-radius:40px;
 
-    cursor:pointer;
+    font-weight:700;
 
-    font-size:17px;
-
-    font-weight:600;
-
-    transition:.4s;
+    transition:.35s;
 
 }
 
-.botones button:first-child{
+.btn1{
 
-    background:linear-gradient(90deg,#0099ff,#00e5ff);
-
-    color:#fff;
-
-    box-shadow:0 0 25px rgba(0,191,255,.5);
-
-}
-
-.botones button:last-child{
-
-    background:transparent;
+    background:linear-gradient(90deg,
+    var(--azul),
+    var(--morado));
 
     color:white;
 
-    border:2px solid #00c8ff;
-
 }
 
-.botones button:hover{
+.btn1:hover{
 
-    transform:translateY(-6px) scale(1.05);
-
-    box-shadow:0 0 40px cyan;
-
-}
-
-/*========================================
-      TITULOS
-=========================================*/
-
-.titulo-seccion{
-
-    text-align:center;
-
-    margin-bottom:50px;
-
-}
-
-.titulo-seccion h2{
-
-    font-size:48px;
-
-    color:#00d5ff;
-
-    margin-bottom:15px;
-
-}
-
-.titulo-seccion p{
-
-    color:#d4d4d4;
-
-    font-size:18px;
-
-}
-
-/*========================================
-        GALERIA
-=========================================*/
-
-.galeria{
-
-    padding:100px 8%;
-
-}
-
-.contenedor-galeria{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:35px;
-
-}
-
-.card-galeria{
-
-    background:rgba(255,255,255,.07);
-
-    backdrop-filter:blur(20px);
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    transition:.5s;
-
-    border:1px solid rgba(255,255,255,.1);
-
-}
-
-.card-galeria:hover{
-
-    transform:translateY(-12px);
-
-    box-shadow:0 0 35px rgba(0,204,255,.45);
-
-}
-
-.card-galeria img{
-
-    width:100%;
-
-    height:330px;
-
-    object-fit:cover;
-
-}
-
-.card-galeria .contenido{
-
-    padding:25px;
-
-}
-
-.card-galeria h3{
-
-    margin-bottom:15px;
-
-    color:#00cfff;
-
-}
-
-.card-galeria p{
-
-    line-height:30px;
-
-}
-
-/*========================================
-      ESTADISTICAS
-=========================================*/
-
-.estadisticas{
-
-    padding:60px 8%;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:30px;
-
-}
-
-.card-estadistica{
-
-    flex:1;
-
-    background:rgba(255,255,255,.07);
-
-    backdrop-filter:blur(20px);
-
-    border-radius:20px;
-
-    padding:40px;
-
-    text-align:center;
-
-    transition:.5s;
-
-}
-
-.card-estadistica:hover{
-
-    transform:translateY(-10px);
+    transform:translateY(-6px);
 
     box-shadow:0 0 35px cyan;
 
 }
 
-.card-estadistica i{
+.btn2{
 
-    font-size:50px;
-
-    color:#00d5ff;
-
-    margin-bottom:20px;
-
-}
-
-.card-estadistica h2{
-
-    font-size:42px;
-
-    margin-bottom:10px;
-
-}
-
-.card-estadistica span{
-
-    color:#d7d7d7;
-
-}
-
-/*========================================
-        UNIDADES
-=========================================*/
-
-.unidades{
-
-    padding:100px 8%;
-
-}
-
-.contenedor-unidades{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:35px;
-
-}
-
-.unidad{
-
-    background:rgba(255,255,255,.07);
-
-    backdrop-filter:blur(20px);
-
-    border-radius:25px;
-
-    text-align:center;
-
-    padding:45px 30px;
-
-    transition:.5s;
-
-    border:1px solid rgba(255,255,255,.08);
-
-}
-
-.unidad:hover{
-
-    transform:translateY(-15px) scale(1.03);
-
-    box-shadow:0 0 40px #00cfff;
-
-}
-
-.icono{
-
-    width:90px;
-
-    margin-bottom:25px;
-
-}
-
-.unidad h2{
-
-    margin-bottom:15px;
-
-    color:#00d5ff;
-
-}
-
-.estrellas{
-
-    font-size:28px;
-
-    color:#ffd700;
-
-    margin-bottom:20px;
-
-}
-
-.unidad p{
-
-    line-height:30px;
-
-    margin-bottom:30px;
-
-}
-
-.unidad button{
-
-    background:linear-gradient(90deg,#008cff,#00f2ff);
-
-    border:none;
+    border:2px solid cyan;
 
     color:white;
 
-    padding:14px 35px;
+}
 
-    border-radius:40px;
+.btn2:hover{
 
-    cursor:pointer;
+    background:cyan;
 
-    font-size:16px;
-
-    transition:.4s;
+    color:#000;
 
 }
 
-.unidad button:hover{
-
-    transform:scale(1.08);
-
-    box-shadow:0 0 30px cyan;
-
-}
-
-/*========================================
-            FOOTER
+/*=========================================
+        BORUTO
 =========================================*/
 
-footer{
+.hero-right{
 
-    margin-top:80px;
-
-    background:#07111f;
-
-    padding:60px 8% 30px;
-
-}
-
-.footer-contenido{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-}
-
-.footer-contenido h2{
-
-    color:#00d4ff;
-
-}
-
-.footer-contenido p{
-
-    margin-top:10px;
-
-}
-
-.redes{
-
-    display:flex;
-
-    gap:18px;
-
-}
-
-.redes a{
-
-    width:55px;
-
-    height:55px;
-
-    border-radius:50%;
+    position:relative;
 
     display:flex;
 
@@ -908,229 +577,95 @@ footer{
 
     align-items:center;
 
-    background:#111d31;
+}
 
-    color:white;
+.boruto{
 
-    text-decoration:none;
+    width:420px;
 
-    transition:.4s;
+    animation:flotar 5s ease-in-out infinite;
 
-    font-size:22px;
+    filter:
+
+    drop-shadow(0 0 40px cyan)
+
+    drop-shadow(0 0 80px #00b7ff);
+
+    z-index:5;
 
 }
 
-.redes a:hover{
-
-    background:#00bfff;
-
-    transform:translateY(-6px);
-
-}
-
-.copy{
-
-    margin-top:25px;
-
-    text-align:center;
-
-    color:#bcbcbc;
-
-}
-/*====================================================
-            LOADER
-=====================================================*/
-
-.loader{
-
-    position:fixed;
-
-    width:100%;
-    height:100vh;
-
-    top:0;
-    left:0;
-
-    background:#02060f;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    z-index:99999;
-
-    animation:desaparecer 1s forwards;
-    animation-delay:2.5s;
-
-}
-
-.loader-content{
-
-    text-align:center;
-
-}
-
-.loader img{
-
-    width:170px;
-
-    animation:girar 5s linear infinite;
-
-}
-
-.loader h2{
-
-    margin-top:25px;
-
-    color:#00d4ff;
-
-    letter-spacing:3px;
-
-}
-
-.barra{
-
-    width:320px;
-
-    height:12px;
-
-    background:#111827;
-
-    margin-top:25px;
-
-    border-radius:30px;
-
-    overflow:hidden;
-
-}
-
-.progreso{
-
-    width:0%;
-
-    height:100%;
-
-    background:linear-gradient(90deg,#0099ff,#00ffff);
-
-    animation:cargar 2.5s linear forwards;
-
-}
-
-/*====================================================
-            PARTICULAS
-=====================================================*/
-
-.particulas{
-
-    position:fixed;
-
-    width:100%;
-    height:100%;
-
-    left:0;
-    top:0;
-
-    overflow:hidden;
-
-    pointer-events:none;
-
-    z-index:-1;
-
-}
-
-.particulas span{
+.portal{
 
     position:absolute;
 
-    width:8px;
-    height:8px;
+    width:520px;
 
-    border-radius:50%;
+    opacity:.22;
 
-    background:#00d4ff;
-
-    box-shadow:0 0 15px cyan;
-
-    animation:subir 12s linear infinite;
+    animation:girarPortal 20s linear infinite;
 
 }
 
-.particulas span:nth-child(1){
+.chakra-card{
 
-    left:5%;
-    animation-delay:0s;
+    position:absolute;
 
-}
+    bottom:-20px;
 
-.particulas span:nth-child(2){
+    right:0;
 
-    left:15%;
-    animation-delay:2s;
+    width:180px;
 
-}
+    padding:25px;
 
-.particulas span:nth-child(3){
+    text-align:center;
 
-    left:28%;
-    animation-delay:5s;
+    border-radius:25px;
 
-}
+    background:rgba(255,255,255,.08);
 
-.particulas span:nth-child(4){
+    backdrop-filter:blur(15px);
 
-    left:40%;
-    animation-delay:1s;
+    border:1px solid rgba(255,255,255,.12);
 
 }
 
-.particulas span:nth-child(5){
+.chakra-card h3{
 
-    left:55%;
-    animation-delay:4s;
-
-}
-
-.particulas span:nth-child(6){
-
-    left:68%;
-    animation-delay:2s;
+    color:#9fdfff;
 
 }
 
-.particulas span:nth-child(7){
+.chakra-card h1{
 
-    left:80%;
-    animation-delay:6s;
+    font-size:60px;
 
-}
-
-.particulas span:nth-child(8){
-
-    left:90%;
-    animation-delay:3s;
+    color:cyan;
 
 }
 
-.particulas span:nth-child(9){
+/*=========================================
+        ANIMACIONES
+=========================================*/
 
-    left:96%;
-    animation-delay:7s;
+@keyframes flotar{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-20px);
+
+    }
 
 }
 
-.particulas span:nth-child(10){
-
-    left:50%;
-    animation-delay:5s;
-
-}
-
-/*====================================================
-                ANIMACIONES
-=====================================================*/
-
-@keyframes girar{
+@keyframes girarPortal{
 
     from{
 
@@ -1146,147 +681,33 @@ footer{
 
 }
 
-@keyframes respirar{
+@keyframes rotar1{
 
-    0%{
+    to{
 
-        transform:translateY(0px);
-
-    }
-
-    50%{
-
-        transform:translateY(-15px);
-
-    }
-
-    100%{
-
-        transform:translateY(0px);
+        transform:rotate(360deg);
 
     }
 
 }
 
-@keyframes pulse{
+@keyframes rotar2{
 
-    0%{
+    to{
 
-        transform:scale(.9);
-
-        opacity:.4;
+        transform:rotate(-360deg);
 
     }
+
+}
+
+@keyframes pulsar{
 
     50%{
 
         transform:scale(1.08);
 
-        opacity:1;
-
     }
-
-    100%{
-
-        transform:scale(.9);
-
-        opacity:.4;
-
-    }
-
-}
-
-@keyframes flotar{
-
-    0%{
-
-        transform:translateX(0);
-
-    }
-
-    50%{
-
-        transform:translateX(-40px);
-
-    }
-
-    100%{
-
-        transform:translateX(0);
-
-    }
-
-}
-
-@keyframes subir{
-
-    0%{
-
-        transform:translateY(100vh) scale(.3);
-
-        opacity:0;
-
-    }
-
-    20%{
-
-        opacity:1;
-
-    }
-
-    100%{
-
-        transform:translateY(-120vh) scale(1.2);
-
-        opacity:0;
-
-    }
-
-}
-
-@keyframes cargar{
-
-    from{
-
-        width:0%;
-
-    }
-
-    to{
-
-        width:100%;
-
-    }
-
-}
-
-@keyframes desaparecer{
-
-    to{
-
-        opacity:0;
-
-        visibility:hidden;
-
-    }
-
-}
-
-/*====================================================
-        EFECTOS EXTRA
-=====================================================*/
-
-.hero-image img{
-
-    user-select:none;
-
-    pointer-events:none;
-
-}
-
-.hero-info{
-
-    animation:aparecer 1.2s ease;
 
 }
 
@@ -1296,7 +717,7 @@ footer{
 
         opacity:0;
 
-        transform:translateX(80px);
+        transform:translateY(40px);
 
     }
 
@@ -1304,373 +725,612 @@ footer{
 
         opacity:1;
 
-        transform:translateX(0);
+        transform:translateY(0);
 
     }
 
 }
+/*=========================================
+            SECCIÓN UNIDADES
+=========================================*/
 
-.card-galeria,
-.unidad,
-.card-estadistica{
+#unidades{
+
+    padding:120px 8%;
+
+    position:relative;
+
+}
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.titulo h2{
+
+    font-size:52px;
+
+    color:white;
+
+    text-shadow:
+    0 0 20px cyan,
+    0 0 50px #00b7ff;
+
+}
+
+.titulo p{
+
+    margin-top:15px;
+
+    font-size:20px;
+
+    color:#cfcfcf;
+
+}
+
+/*=========================================
+            CONTENEDOR
+=========================================*/
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:45px;
+
+}
+
+/*=========================================
+            TARJETA
+=========================================*/
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:.45s;
+
+    text-align:center;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    background:radial-gradient(circle,
+    rgba(0,183,255,.45),
+    transparent 70%);
+
+    top:-120px;
+
+    right:-120px;
+
+    transition:.6s;
+
+}
+
+.card:hover{
+
+    transform:
+
+    translateY(-18px)
+
+    scale(1.03);
+
+    box-shadow:
+
+    0 0 50px rgba(0,183,255,.35);
+
+}
+
+.card:hover::before{
+
+    transform:scale(1.4);
+
+}
+
+.card img{
+
+    width:110px;
+
+    margin-bottom:25px;
 
     transition:.5s;
 
-}
-
-.card-galeria:hover,
-.unidad:hover,
-.card-estadistica:hover{
-
-    border:1px solid rgba(0,225,255,.6);
-
-}
-/*=====================================================
-            RESPONSIVE TABLET
-======================================================*/
-
-@media(max-width:1200px){
-
-header{
-
-padding:20px 40px;
+    filter:drop-shadow(0 0 20px cyan);
 
 }
 
-.hero{
+.card:hover img{
 
-flex-direction:column;
+    transform:
 
-text-align:center;
+    rotate(10deg)
 
-padding-top:150px;
-
-}
-
-.hero-image{
-
-width:100%;
-
-margin-bottom:40px;
+    scale(1.15);
 
 }
 
-.hero-info{
+.card h2{
 
-width:100%;
+    font-size:34px;
 
-}
+    margin-bottom:15px;
 
-.hero-info h1{
-
-font-size:48px;
-
-line-height:58px;
+    color:white;
 
 }
 
-.boruto{
+.card p{
 
-width:400px;
+    color:#d8d8d8;
 
-}
+    font-size:18px;
 
-.portal{
-
-width:520px;
+    line-height:30px;
 
 }
 
-.chakra{
+/*=========================================
+            ESTRELLAS
+=========================================*/
 
-width:520px;
+.estrellas{
 
-}
+    margin:28px 0;
 
-.contenedor-galeria{
+    font-size:30px;
 
-grid-template-columns:repeat(2,1fr);
+    color:#FFD700;
 
-}
+    letter-spacing:6px;
 
-.contenedor-unidades{
+    text-shadow:
 
-grid-template-columns:repeat(2,1fr);
+    0 0 15px gold,
 
-}
-
-.estadisticas{
-
-flex-wrap:wrap;
+    0 0 30px orange;
 
 }
 
-.card-estadistica{
+/*=========================================
+            BOTÓN
+=========================================*/
 
-min-width:280px;
+.card a{
 
-}
+    display:inline-block;
 
-}
+    margin-top:20px;
 
+    padding:15px 35px;
 
-/*=====================================================
-            RESPONSIVE CELULAR
-======================================================*/
+    border-radius:40px;
 
-@media(max-width:768px){
+    text-decoration:none;
 
-header{
+    font-weight:700;
 
-padding:15px 20px;
+    color:white;
 
-flex-direction:column;
+    background:
 
-gap:20px;
+    linear-gradient(90deg,
+    #00b7ff,
+    #8d4dff);
 
-}
-
-.logo{
-
-font-size:20px;
-
-}
-
-nav ul{
-
-flex-direction:column;
-
-gap:10px;
-
-width:100%;
+    transition:.35s;
 
 }
 
-nav ul li{
+.card a:hover{
 
-width:100%;
+    transform:translateY(-5px);
 
-text-align:center;
+    box-shadow:
 
-}
+    0 0 35px cyan,
 
-.submenu{
-
-position:relative;
-
-top:0;
-
-width:100%;
-
-border-radius:10px;
+    0 0 60px #00b7ff;
 
 }
 
-.hero{
+/*=========================================
+        EFECTO BRILLO
+=========================================*/
 
-padding:180px 25px 60px;
+.card::after{
 
-}
+    content:"";
 
-.hero-image{
+    position:absolute;
 
-width:100%;
+    width:100%;
 
-}
+    height:4px;
 
-.boruto{
+    left:-100%;
 
-width:280px;
+    top:0;
 
-}
+    background:
 
-.portal{
+    linear-gradient(90deg,
+    transparent,
+    cyan,
+    transparent);
 
-width:350px;
-
-right:auto;
-
-}
-
-.chakra{
-
-width:360px;
+    transition:.7s;
 
 }
 
-.jougan{
+.card:hover::after{
 
-width:70px;
-
-right:70px;
-
-top:60px;
+    left:100%;
 
 }
 
-.kunai{
+/*=========================================
+            FOOTER
+=========================================*/
 
-width:90px;
+footer{
 
-left:20px;
+    margin-top:120px;
 
-}
+    padding:30px;
 
-.hero-info{
+    text-align:center;
 
-width:100%;
+    background:#040915;
 
-}
-
-.hero-info h1{
-
-font-size:38px;
-
-line-height:45px;
+    border-top:1px solid rgba(255,255,255,.08);
 
 }
 
-.hero-info h2{
+footer p{
 
-font-size:22px;
+    color:#bfbfbf;
+
+    letter-spacing:1px;
+
+}
+/*=========================================
+        EFECTO GLASS PREMIUM
+=========================================*/
+
+.hero-center,
+.card,
+.chakra-card{
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 8px 35px rgba(0,0,0,.35),
+    inset 0 1px 1px rgba(255,255,255,.15);
 
 }
 
-.hero-info p{
+/*=========================================
+        BURBUJAS DE CHAKRA
+=========================================*/
 
-font-size:16px;
+#particles span{
 
-line-height:30px;
+    position:absolute;
 
-text-align:left;
+    bottom:-50px;
 
-}
+    width:10px;
 
-.botones{
+    height:10px;
 
-flex-direction:column;
+    border-radius:50%;
 
-}
+    background:#00d9ff;
 
-.botones button{
+    box-shadow:
+    0 0 10px cyan,
+    0 0 20px cyan,
+    0 0 35px cyan;
 
-width:100%;
-
-}
-
-.contenedor-galeria{
-
-grid-template-columns:1fr;
-
-}
-
-.contenedor-unidades{
-
-grid-template-columns:1fr;
+    animation:burbujas linear infinite;
 
 }
 
-.estadisticas{
+#particles span:nth-child(1){
 
-flex-direction:column;
-
-}
-
-.footer-contenido{
-
-flex-direction:column;
-
-gap:30px;
-
-text-align:center;
+left:5%;
+animation-duration:10s;
 
 }
 
-.loader img{
+#particles span:nth-child(2){
 
-width:120px;
+left:15%;
+animation-duration:14s;
 
-}
-
-.barra{
-
-width:250px;
+width:18px;
+height:18px;
 
 }
 
-}
+#particles span:nth-child(3){
 
-
-/*=====================================================
-        EFECTO NEON
-======================================================*/
-
-.hero-info h1{
-
-text-shadow:
-
-0 0 10px #00bfff,
-
-0 0 20px #0099ff,
-
-0 0 35px #00e5ff;
+left:25%;
+animation-duration:12s;
 
 }
 
-.logo{
+#particles span:nth-child(4){
 
-animation:logoGlow 3s infinite;
+left:38%;
+animation-duration:18s;
 
 }
 
-@keyframes logoGlow{
+#particles span:nth-child(5){
+
+left:50%;
+animation-duration:13s;
+
+width:15px;
+
+height:15px;
+
+}
+
+#particles span:nth-child(6){
+
+left:65%;
+animation-duration:17s;
+
+}
+
+#particles span:nth-child(7){
+
+left:78%;
+animation-duration:11s;
+
+}
+
+#particles span:nth-child(8){
+
+left:90%;
+animation-duration:16s;
+
+}
+
+/*=========================================
+        ESTRELLAS DEL FONDO
+=========================================*/
+
+body::after{
+
+    animation:estrellas 15s linear infinite;
+
+}
+
+@keyframes estrellas{
 
 0%{
 
-text-shadow:0 0 5px cyan;
+transform:translateY(0);
 
 }
 
 50%{
 
-text-shadow:
-
-0 0 20px cyan,
-
-0 0 40px #00bfff,
-
-0 0 60px #008cff;
+transform:translateY(-30px);
 
 }
 
 100%{
 
-text-shadow:0 0 5px cyan;
+transform:translateY(0);
 
 }
 
 }
 
+/*=========================================
+        BURBUJAS
+=========================================*/
 
-/*=====================================================
-            EFECTO TARJETAS
-======================================================*/
+@keyframes burbujas{
 
-.unidad::before,
-.card-galeria::before,
-.card-estadistica::before{
+0%{
+
+transform:
+
+translateY(0)
+
+scale(.3);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+80%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(-120vh)
+
+scale(1.6);
+
+opacity:0;
+
+}
+
+}
+
+/*=========================================
+        RESPLANDOR FOTO
+=========================================*/
+
+.foto{
+
+animation:fotoGlow 3s infinite;
+
+}
+
+@keyframes fotoGlow{
+
+0%{
+
+box-shadow:
+
+0 0 20px cyan,
+
+0 0 40px #00b7ff;
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 40px cyan,
+
+0 0 80px #00b7ff,
+
+0 0 120px #8d4dff;
+
+}
+
+100%{
+
+box-shadow:
+
+0 0 20px cyan,
+
+0 0 40px #00b7ff;
+
+}
+
+}
+
+/*=========================================
+        BORUTO
+=========================================*/
+
+.boruto:hover{
+
+transform:
+
+scale(1.08);
+
+transition:.5s;
+
+}
+
+/*=========================================
+        MENU
+=========================================*/
+
+nav a{
+
+position:relative;
+
+}
+
+nav a::after{
 
 content:"";
 
 position:absolute;
 
-top:0;
+left:0;
+
+bottom:-8px;
+
+width:0;
+
+height:3px;
+
+background:cyan;
+
+transition:.4s;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+/*=========================================
+        EFECTO BOTONES
+=========================================*/
+
+.btn1,
+.btn2,
+#btnMision{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.btn1::before,
+.btn2::before,
+#btnMision::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+
+height:100%;
 
 left:-120%;
 
-width:80%;
-
-height:100%;
+top:0;
 
 background:
 
@@ -1680,29 +1340,544 @@ linear-gradient(
 
 transparent,
 
-rgba(255,255,255,.35),
+rgba(255,255,255,.4),
 
 transparent
 
 );
 
-transform:skewX(-25deg);
-
-transition:.8s;
+transition:.6s;
 
 }
 
-.unidad:hover::before,
-.card-galeria:hover::before,
-.card-estadistica:hover::before{
+.btn1:hover::before,
+.btn2:hover::before,
+#btnMision:hover::before{
 
-left:150%;
+left:120%;
 
 }
 
-.unidad,
-.card-galeria,
-.card-estadistica{
+/*=========================================
+        RESPONSIVE TABLET
+=========================================*/
+
+@media(max-width:1200px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-left,
+.hero-right{
+
+margin-top:40px;
+
+}
+
+.hero-center h1{
+
+font-size:56px;
+
+}
+
+.cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/*=========================================
+        RESPONSIVE CELULAR
+=========================================*/
+
+@media(max-width:768px){
+
+header{
+
+padding:20px;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+nav ul{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.hero{
+
+padding:170px 30px;
+
+}
+
+.hero-center h1{
+
+font-size:42px;
+
+line-height:50px;
+
+}
+
+.hero-center h2{
+
+font-size:22px;
+
+}
+
+.hero-center p{
+
+font-size:16px;
+
+}
+
+.energia{
+
+width:280px;
+
+height:280px;
+
+}
+
+.foto{
+
+width:180px;
+
+height:180px;
+
+}
+
+.portal{
+
+width:320px;
+
+}
+
+.boruto{
+
+width:260px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.botones{
+
+flex-direction:column;
+
+}
+
+}
+
+/*=========================================
+        FIN CSS
+=========================================*/
+/*==================================================
+        CURSOR DE CHAKRA
+==================================================*/
+
+.cursor-chakra{
+
+position:fixed;
+
+width:22px;
+
+height:22px;
+
+border-radius:50%;
+
+background:#00d9ff;
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+box-shadow:
+
+0 0 10px cyan,
+
+0 0 25px cyan,
+
+0 0 50px cyan;
+
+z-index:99999;
+
+transition:.05s;
+
+animation:cursorGlow 2s infinite;
+
+}
+
+@keyframes cursorGlow{
+
+0%{
+
+transform:translate(-50%,-50%) scale(1);
+
+}
+
+50%{
+
+transform:translate(-50%,-50%) scale(1.4);
+
+}
+
+100%{
+
+transform:translate(-50%,-50%) scale(1);
+
+}
+
+}
+
+/*==================================================
+        PARTICULAS
+==================================================*/
+
+.cursor-particula{
+
+position:absolute;
+
+width:8px;
+
+height:8px;
+
+background:cyan;
+
+border-radius:50%;
+
+pointer-events:none;
+
+box-shadow:
+
+0 0 15px cyan;
+
+animation:particula .7s linear forwards;
+
+z-index:9999;
+
+}
+
+@keyframes particula{
+
+0%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+
+translateY(-40px)
+
+scale(0);
+
+}
+
+}
+
+/*==================================================
+        EXPLOSION
+==================================================*/
+
+.onda{
+
+position:absolute;
+
+width:10px;
+
+height:10px;
+
+background:#00e5ff;
+
+border-radius:50%;
+
+pointer-events:none;
+
+z-index:9999;
+
+animation:onda .9s forwards;
+
+box-shadow:
+
+0 0 20px cyan,
+
+0 0 50px cyan;
+
+}
+
+@keyframes onda{
+
+0%{
+
+transform:
+
+translate(0,0)
+
+scale(1);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translate(var(--x),var(--y))
+
+scale(0);
+
+opacity:0;
+
+}
+
+}
+
+/*==================================================
+        SCROLL
+==================================================*/
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+/*==================================================
+        SELECCION
+==================================================*/
+
+::selection{
+
+background:cyan;
+
+color:#000;
+
+}
+
+/*==================================================
+        SCROLL BAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#07101f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(cyan,#004dff);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#00ffff;
+
+}
+/*=========================================
+      CLASES FALTANTES
+=========================================*/
+
+/* Barra de chakra */
+
+.barra{
+
+width:100%;
+
+height:12px;
+
+background:linear-gradient(90deg,#00d9ff,#0066ff);
+
+border-radius:20px;
+
+box-shadow:
+
+0 0 15px cyan,
+
+0 0 35px cyan;
+
+transition:.3s;
+
+}
+
+/* Shuriken */
+
+.shuriken-click{
+
+position:fixed;
+
+width:70px;
+
+pointer-events:none;
+
+z-index:99999;
+
+animation:shurikenFly 1.2s linear forwards;
+
+}
+
+@keyframes shurikenFly{
+
+0%{
+
+transform:
+
+translate(-50%,-50%)
+
+rotate(0deg)
+
+scale(.4);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translate(-50%,-220px)
+
+rotate(900deg)
+
+scale(1.4);
+
+opacity:0;
+
+}
+
+}
+
+/* Kunai */
+
+.kunai-card{
+
+position:absolute;
+
+width:60px;
+
+right:15px;
+
+top:15px;
+
+animation:kunaiMove .8s ease;
+
+pointer-events:none;
+
+}
+
+@keyframes kunaiMove{
+
+0%{
+
+transform:
+
+translateX(100px)
+
+rotate(120deg);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:
+
+translateX(0)
+
+rotate(0deg);
+
+opacity:1;
+
+}
+
+}
+
+/* Destellos */
+
+.destello{
+
+position:fixed;
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:cyan;
+
+pointer-events:none;
+
+box-shadow:
+
+0 0 10px cyan,
+
+0 0 30px cyan,
+
+0 0 60px cyan;
+
+animation:destello .8s linear forwards;
+
+}
+
+@keyframes destello{
+
+0%{
+
+opacity:1;
+
+transform:scale(.2);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:scale(5);
+
+}
+
+}
+
+/* Tarjetas */
+
+.card{
 
 position:relative;
 
@@ -1710,33 +1885,45 @@ overflow:hidden;
 
 }
 
+/* Hero */
 
-/*=====================================================
-        IMAGENES
-======================================================*/
+.hero{
 
-img{
+position:relative;
 
-max-width:100%;
-
-display:block;
+overflow:hidden;
 
 }
 
+/* Imagen principal */
 
-/*=====================================================
-        SELECCION
-======================================================*/
+.foto{
 
-::selection{
-
-background:#00bfff;
-
-color:white;
+transition:.4s;
 
 }
 
+/* Boruto */
 
-/*=====================================================
-            FIN
-======================================================*/
+.boruto{
+
+transition:.4s;
+
+}
+
+/* Portal */
+
+.portal{
+
+transition:.2s linear;
+
+}
+
+/* Energía */
+
+.energia{
+
+transition:.4s;
+
+}
+s
