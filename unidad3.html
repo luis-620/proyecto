@@ -7,12 +7,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Orbitron:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="unit3.css">
+  <link rel="stylesheet" href="unit3-interactive.css">
 </head>
 <body>
   <div class="sky"></div>
   <header class="topbar">
     <a class="brand" href="index.html"><span class="brand-mark">◒</span><span>ACADEMIA NINJA <strong>DE SASUKE</strong></span></a>
     <nav aria-label="Navegación principal"><a href="index.html">INICIO</a><a href="unidad1.html">UNIDAD 1</a><a href="unidad2.html">UNIDAD 2</a><a class="selected" href="unidad3.html">UNIDAD 3</a><a href="#ranking">RANKING</a><a href="#logros">LOGROS</a></nav>
+    <div id="mission-message" aria-live="polite">✦ Selecciona un nivel para iniciar tu entrenamiento</div>
     <button id="sound" aria-label="Activar o desactivar sonido">♩</button>
     <div class="user"><img src="img/avatar.jpg" alt="Avatar del estudiante"><span><b>Uchiha Estudiante</b><small>Genin de Konoha · Nivel 5</small></span></div>
   </header>
@@ -49,7 +51,7 @@
     </section>
   </main>
 
-  <dialog id="lesson-modal"><button class="close" aria-label="Cerrar">×</button><p class="eyebrow">MISIÓN DE PROGRAMACIÓN</p><h2 id="modal-title">Lenguajes y paradigmas</h2><p id="modal-text"></p><div class="challenge"><b>DESAFÍO RÁPIDO</b><p id="question"></p><div id="answers"></div><small id="feedback"></small></div><button id="complete">COMPLETAR MISIÓN +100 XP</button></dialog>
+  <dialog id="lesson-modal"><button class="close" aria-label="Cerrar">×</button><p class="eyebrow">MISIÓN DE PROGRAMACIÓN</p><h2 id="modal-title">Lenguajes y paradigmas</h2><p id="modal-text"></p><div class="mission-meter"><span id="question-count">Pregunta 1 de 5</span><div><i id="question-progress"></i></div></div><div class="challenge"><b>DESAFÍO RÁPIDO</b><p id="question"></p><div id="answers"></div><small id="feedback"></small></div><div class="mission-actions"><button id="exit-mission">← SALIR DE LA MISIÓN</button><button id="next-question" disabled>SIGUIENTE PREGUNTA →</button></div><button id="complete" hidden>COMPLETAR MISIÓN +100 XP</button></dialog>
   <div id="toast" role="status"></div>
   <script src="unit3.js"></script>
 </body>
