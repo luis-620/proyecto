@@ -1,72 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio - Luis Alexander Yugsi</title>
-<link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad Técnica de Cotopaxi</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
-<body>
-<header>
-    <h1>Portafolio Personal</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li class="menu">
-                <a href="#">Unidad 1 ▼</a>
-                <ul class="submenu">
-                    <li><a href="unidad1.html">Ver Unidad 1</a></li>
-                </ul>
-            </li>
-            <li class="menu">
-                <a href="#">Unidad 2 ▼</a>
-                <ul class="submenu">
-                    <li><a href="unidad2.html">Ver Unidad 2</a></li>
-                </ul>
-            </li>
-            <li class="menu">
-                <a href="#">Unidad 3 ▼</a>
-                <ul class="submenu">
-                    <li><a href="unidad3.html">Ver Unidad 3</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
+<body class="index-page">
+    <header class="index-header">
+        <div class="header-content">
+            <span class="header-badge">Misión anime • aprendizaje</span>
+            <h1>Universidad Técnica de Cotopaxi</h1>
+            <p>Tu próxima aventura comienza aquí, con energía, disciplina y conocimiento.</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li class="menu">
+                    <a href="#">Unidad 1 ▼</a>
+                    <ul class="submenu">
+                        <li><a href="unidad1.html">Ver Unidad 1</a></li>
+                    </ul>
+                </li>
+                <li class="menu">
+                    <a href="#">Unidad 2 ▼</a>
+                    <ul class="submenu">
+                        <li><a href="unidad2.html">Ver Unidad 2</a></li>
+                    </ul>
+                </li>
+                <li class="menu">
+                    <a href="#">Unidad 3 ▼</a>
+                    <ul class="submenu">
+                        <li><a href="unidad3.html">Ver Unidad 3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="principal">
-<img src="img/foto.jpg" alt="Foto de Luis">
-<div>
-<h2>Luis Alexander Yugsi</h2>
-<h3>Biografía</h3>
-<p>
-Mi nombre es <b>Luis Alexander Yugsi</b>. Nací el <b>24 de abril de 2006</b>.
-Durante mi niñez me apasionó el atletismo. Gracias a mi esfuerzo fui seleccionado para representar al cantón El Chaco. En mi primera competencia obtuve un excelente resultado al conseguir <b>3 medallas de oro, 3 medallas de plata y 1 medalla de bronce</b>, compitiendo en las disciplinas de resistencia, velocidad y postas.
-Practicé atletismo hasta los 13 años. Posteriormente comencé a jugar fútbol motivado por mi hermano menor, iniciando una nueva etapa deportiva llena de aprendizajes y experiencias.
-</p>
-</div>
-</section>
+    <main class="hero-home">
+        <section class="game-panel">
+            <div class="image-card">
+                <img src="img/inicio.jpg" alt="Imagen de la Universidad Técnica de Cotopaxi">
+                <div class="image-badge">Nueva misión</div>
+            </div>
 
-<section class="tarjetas">
-<div class="card">
-<h2>Unidad 1</h2>
-<h1>★★★★★</h1>
-<p>Calificación: 5 estrellas</p>
-</div>
-<div class="card">
-<h2>Unidad 2</h2>
-<h1>★★★★★</h1>
-<p>Calificación: 5 estrellas</p>
-</div>
-<div class="card">
-<h2>Unidad 3</h2>
-<h1>★★★★☆</h1>
-<p>Calificación: 4 estrellas</p>
-</div>
-</section>
+            <div class="story-card">
+                <p class="eyebrow">Modo aventura anime</p>
+                <h2>¡Bienvenido, shinobi del conocimiento!</h2>
+                <p>Tu viaje en la Universidad Técnica de Cotopaxi está lleno de retos, aprendizajes y nuevas habilidades. Completa la misión para subir de nivel.</p>
 
-<footer>
-<p>© 2026 Luis Alexander Yugsi</p>
-</footer>
+                <div class="stats">
+                    <div class="stat">
+                        <span id="chakra-count">0</span>
+                        <small>Chakra</small>
+                    </div>
+                    <div class="stat">
+                        <span id="rank">Novato</span>
+                        <small>Rango</small>
+                    </div>
+                </div>
+
+                <button id="mission-btn">Iniciar misión</button>
+                <p id="mission-text">Haz clic para acumular energía y avanzar.</p>
+            </div>
+        </section>
+
+        <section class="tarjetas">
+            <div class="card">
+                <h3>Unidad 1</h3>
+                <p>Explora los fundamentos de tu camino académico.</p>
+            </div>
+            <div class="card">
+                <h3>Unidad 2</h3>
+                <p>Desarrolla nuevas habilidades para enfrentar desafíos.</p>
+            </div>
+            <div class="card">
+                <h3>Unidad 3</h3>
+                <p>Consolida tu conocimiento y avanza con confianza.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Universidad Técnica de Cotopaxi</p>
+    </footer>
+
+    <script>
+        const missionBtn = document.getElementById('mission-btn');
+        const chakraCount = document.getElementById('chakra-count');
+        const rank = document.getElementById('rank');
+        const missionText = document.getElementById('mission-text');
+
+        let chakra = 0;
+
+        missionBtn.addEventListener('click', () => {
+            chakra += 1;
+            chakraCount.textContent = chakra;
+
+            if (chakra < 5) {
+                rank.textContent = 'Novato';
+                missionText.textContent = 'Tu energía crece. ¡Sigue adelante!';
+            } else if (chakra < 10) {
+                rank.textContent = 'Shinobi';
+                missionText.textContent = '¡Excelente! Ya dominas el primer nivel.';
+            } else {
+                rank.textContent = 'Maestro';
+                missionText.textContent = '¡Misión cumplida! Tu camino está listo para la siguiente etapa.';
+            }
+        });
+    </script>
 </body>
 </html>
