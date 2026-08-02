@@ -194,8 +194,7 @@ cambio=!cambio;
 /*=========================================
         EFECTO FOTO
 =========================================*/
-
-const foto=document.querySelector(".foto");
+ss
 
 if(foto){
 
