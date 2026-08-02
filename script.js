@@ -892,3 +892,238 @@ audioClick.play().catch(()=>{});
 =========================================*/
 
 console.log("Parte 3.4 cargada correctamente");
+/*========================================
+|          PARTE 3.5
+|  EFECTO FINAL Y BOTÓN SUBIR
+=========================================*/
+
+// Botón subir
+const btnTop = document.getElementById("btnTop");
+
+if(btnTop){
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY > 400){
+            btnTop.classList.add("mostrar");
+        }else{
+            btnTop.classList.remove("mostrar");
+        }
+
+    });
+
+    btnTop.addEventListener("click",()=>{
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    });
+
+}
+
+
+
+// Animación del título
+
+const titulo=document.querySelector(".hero h1");
+
+if(titulo){
+
+    setInterval(()=>{
+
+        titulo.classList.toggle("brillo");
+
+    },1500);
+
+}
+
+
+
+// Animación de las tarjetas
+
+const tarjetas=document.querySelectorAll(".card");
+
+tarjetas.forEach((card,i)=>{
+
+    card.style.animationDelay=`${i*0.2}s`;
+
+});
+
+/*=========================================
+        FIN PARTE 3.5
+=========================================*/
+
+console.log("Página Premium cargada correctamente");
+/*========================================
+|            PARTE 4.1
+|        CURSOR DE ENERGÍA
+=========================================*/
+
+const cursor = document.createElement("div");
+cursor.className = "cursor-chakra";
+document.body.appendChild(cursor);
+
+document.addEventListener("mousemove", (e) => {
+
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+
+});
+
+document.addEventListener("mousedown", () => {
+    cursor.classList.add("click");
+});
+
+document.addEventListener("mouseup", () => {
+    cursor.classList.remove("click");
+});
+
+console.log("Parte 4.1 cargada");
+/*=========================================
+        PARTE 4.2
+        ESTRELLAS DE CHAKRA
+=========================================*/
+
+const fondo = document.getElementById("particles");
+
+if(fondo){
+
+    for(let i=0;i<40;i++){
+
+        const estrella = document.createElement("span");
+
+        estrella.className = "estrella";
+
+        estrella.style.left = Math.random()*100 + "%";
+        estrella.style.top = Math.random()*100 + "%";
+
+        estrella.style.animationDuration =
+        (3 + Math.random()*5) + "s";
+
+        estrella.style.animationDelay =
+        Math.random()*5 + "s";
+
+        fondo.appendChild(estrella);
+
+    }
+
+}
+
+console.log("Parte 4.2 cargada");
+/*=========================================
+        PARTE 4.3
+        TARJETAS 3D PREMIUM
+=========================================*/
+
+document.querySelectorAll(".card").forEach(card=>{
+
+    card.addEventListener("mousemove",(e)=>{
+
+        const rect=card.getBoundingClientRect();
+
+        const x=e.clientX-rect.left;
+
+        const y=e.clientY-rect.top;
+
+        const rotateY=((x/rect.width)-0.5)*18;
+
+        const rotateX=((y/rect.height)-0.5)*-18;
+
+        card.style.transform=
+        `perspective(1000px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        scale(1.04)`;
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform=
+        "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+
+    });
+
+});
+
+
+/*=========================================
+        BRILLO AUTOMÁTICO
+=========================================*/
+
+setInterval(()=>{
+
+    document.querySelectorAll(".card").forEach(card=>{
+
+        card.style.boxShadow="0 0 30px cyan";
+
+        setTimeout(()=>{
+
+            card.style.boxShadow="0 0 15px rgba(0,255,255,.4)";
+
+        },700);
+
+    });
+
+},2500);
+
+
+/*=========================================
+        FIN PARTE 4.3
+=========================================*/
+
+console.log("Parte 4.3 cargada");
+/*=========================================
+        PARTE 4.4
+        ANIMACIÓN DE SECCIONES
+=========================================*/
+
+const secciones = document.querySelectorAll("section");
+
+const mostrarSeccion = new IntersectionObserver((entradas)=>{
+
+    entradas.forEach((entrada)=>{
+
+        if(entrada.isIntersecting){
+
+            entrada.target.classList.add("mostrar-seccion");
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+secciones.forEach((seccion)=>{
+
+    mostrarSeccion.observe(seccion);
+
+});
+
+
+/*=========================================
+        EFECTO DE BRILLO EN BOTONES
+=========================================*/
+
+document.querySelectorAll("button, .btn").forEach((boton)=>{
+
+    boton.addEventListener("mouseenter",()=>{
+
+        boton.style.boxShadow="0 0 25px cyan";
+
+    });
+
+    boton.addEventListener("mouseleave",()=>{
+
+        boton.style.boxShadow="none";
+
+    });
+
+});
+
+
+console.log("Parte 4.4 cargada");

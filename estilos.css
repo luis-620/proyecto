@@ -1926,3 +1926,190 @@ transition:.2s linear;
 transition:.4s;
 
 }
+#btnTop{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#ff6a00;
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    opacity:0;
+    visibility:hidden;
+    transition:.4s;
+    box-shadow:0 0 20px #ff6a00;
+    z-index:9999;
+}
+
+#btnTop.mostrar{
+    opacity:1;
+    visibility:visible;
+}
+
+#btnTop:hover{
+    transform:scale(1.15);
+}
+
+.brillo{
+    text-shadow:
+    0 0 10px #00aaff,
+    0 0 20px #00aaff,
+    0 0 40px #00aaff;
+}
+/*========================================
+        CURSOR CHAKRA
+=========================================*/
+
+.cursor-chakra{
+
+    position:fixed;
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:#00bfff;
+
+    box-shadow:
+    0 0 10px #00bfff,
+    0 0 25px #00bfff,
+    0 0 45px #00bfff;
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:999999;
+
+    transition:
+    width .2s,
+    height .2s,
+    background .3s;
+
+}
+
+.cursor-chakra.click{
+
+    width:35px;
+    height:35px;
+
+    background:#ff6600;
+
+    box-shadow:
+    0 0 20px #ff6600,
+    0 0 45px #ff6600,
+    0 0 70px #ff6600;
+
+}
+/*=========================================
+        PARTE 4.2
+        ESTRELLAS
+=========================================*/
+
+.estrella{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 8px cyan,
+    0 0 15px cyan;
+
+    animation:estrellaFloat linear infinite;
+
+}
+
+@keyframes estrellaFloat{
+
+    0%{
+
+        transform:translateY(0px) scale(1);
+
+        opacity:0;
+
+    }
+
+    30%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120px) scale(0);
+
+        opacity:0;
+
+    }
+
+}
+/*=========================================
+        PARTE 4.3
+        TARJETAS PREMIUM
+=========================================*/
+
+.card{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+    transform-style:preserve-3d;
+
+    cursor:pointer;
+
+}
+
+.card:hover{
+
+    box-shadow:
+        0 0 20px cyan,
+        0 0 40px rgba(0,255,255,.6);
+
+}
+/*=========================================
+        PARTE 4.4
+=========================================*/
+
+section{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:all .8s ease;
+
+}
+
+.mostrar-seccion{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+button,
+.btn{
+
+    transition:.3s;
+
+}
+
+button:hover,
+.btn:hover{
+
+    transform:translateY(-5px);
+
+}
