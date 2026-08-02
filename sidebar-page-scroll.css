@@ -1,0 +1,2 @@
+/* El panel acompaña el desplazamiento general de la página, sin una barra propia. */
+.sidebar{position:absolute!important;top:0!important;bottom:auto!important;left:0!important;height:auto!important;min-height:100vh;overflow:visible!important}.sidebar-chakra{overflow:hidden!important}
