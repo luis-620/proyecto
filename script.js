@@ -1,20 +1,17 @@
 /*=========================================
         CARGA DE LA PAGINA
 =========================================*/
+window.addEventListener("load", () => {
 
-window.addEventListener("load",()=>{
+    const loader = document.getElementById("loader");
 
-    const loader=document.getElementById("loader");
+    if (loader) {
 
-    if(loader){
-
-        setTimeout(()=>{
-
-            loader.style.opacity="0";
-            loader.style.visibility="hidden";
-            loader.style.display="none";
-
-        },1800);
+        setTimeout(() => {
+            loader.style.opacity = "0";
+            loader.style.visibility = "hidden";
+            loader.style.display = "none";
+        }, 1800);
 
     }
 
