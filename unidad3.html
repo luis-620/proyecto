@@ -1,1 +1,56 @@
-<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Unidad 3 | Sasuke</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="units.css"></head><body class="unit-page sasuke"><main class="unit-screen"><a href="index.html#unidades" class="back">← VOLVER AL MENÚ</a><div class="unit-copy"><p>UNIDAD 03 · SASUKE</p><h1>PROYECTO<br><span>FINAL</span></h1><p class="unit-description">Aquí se mostrará el proyecto y las habilidades finales de la Unidad 3.</p><span class="coming">PRÓXIMAMENTE</span></div><img class="unit-character" src="img/sasuke.png" alt="Sasuke Uchiha"></main><script src="units.js"></script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidad 3 · Programación | Academia Ninja</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Orbitron:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="unit3.css">
+</head>
+<body>
+  <div class="sky"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">◒</span><span>ACADEMIA NINJA <strong>DE SASUKE</strong></span></a>
+    <nav aria-label="Navegación principal"><a href="index.html">INICIO</a><a href="unidad1.html">UNIDAD 1</a><a href="unidad2.html">UNIDAD 2</a><a class="selected" href="unidad3.html">UNIDAD 3</a><a href="#ranking">RANKING</a><a href="#logros">LOGROS</a></nav>
+    <button id="sound" aria-label="Activar o desactivar sonido">♩</button>
+    <div class="user"><img src="img/avatar.jpg" alt="Avatar del estudiante"><span><b>Uchiha Estudiante</b><small>Genin de Konoha · Nivel 5</small></span></div>
+  </header>
+
+  <main class="layout">
+    <aside class="left-panel">
+      <section class="side-card"><h2>✦ ESTADO NINJA</h2><p>⚡ ENERGÍA <b class="lime">100/100</b></p><div class="bar energy"><i></i></div><p>▧ EXPERIENCIA <b class="purple">350/500</b></p><div class="bar"><i style="width:70%"></i></div><p>♟ RANGO <b class="purple">GENIN</b></p></section>
+      <section class="side-card"><h2>◉ RECURSOS</h2><p>◉ MONEDAS <b class="gold">999</b></p><p>▤ PUNTOS <b class="cyan">120</b></p><p>🏆 MEDALLAS <b class="orange">8</b></p></section>
+      <section class="side-card info"><h2>INFORMACIÓN</h2><p>Completa los niveles para dominar el arte de programar y desbloquear tu verdadero potencial.</p><img src="img/imagen_unidad3/sharingan.svg" alt="Emblema Sharingan"></section>
+    </aside>
+
+    <section class="content">
+      <div class="hero">
+        <img class="sasuke" src="img/imagen_unidad3/sasuke-programador.png" alt="Sasuke Uchiha con energía eléctrica">
+        <div class="hero-title"><p>✦ CAMINO DEL SHINOBI DIGITAL ✦</p><h1>UNIDAD <span>3</span></h1><h2>PROGRAMACIÓN</h2><p class="subtitle">Domina la lógica. Escribe tu futuro. Programa tu destino.</p></div>
+        <section class="progress-card"><h2>TU PROGRESO EN LA UNIDAD</h2><div class="progress-body"><div class="ring"><b id="progress-number">20%</b><small>COMPLETADO</small></div><div><p>Niveles completados <b id="level-count">1 / 5</b></p><p>Lecciones vistas <b>3 / 20</b></p><p>Ejercicios resueltos <b>6 / 40</b></p><p>Puntos totales <b>120 XP</b></p></div></div></section>
+      </div>
+
+      <section class="path-section" aria-label="Niveles de programación">
+        <div class="path-line"></div>
+        <article class="level unlocked active" data-level="0"><button class="orb">1</button><span>NIVEL 1</span><h3>Lenguajes y<br>paradigmas de<br>programación</h3><p>◷ 4 horas</p><strong>COMPLETADO</strong><div class="mini-progress"><i></i></div></article>
+        <article class="level" data-level="1"><button class="orb">2</button><span>NIVEL 2</span><h3>Introducción a la<br>programación en<br>Python</h3><p>◷ 6 horas</p><strong>DESBLOQUEAR</strong><div class="mini-progress"><i></i></div></article>
+        <article class="level" data-level="2"><button class="orb">3</button><span>NIVEL 3</span><h3>Operadores algebraicos,<br>relacionales y lógicos</h3><p>◷ 8 horas</p><strong>BLOQUEADO</strong><div class="mini-progress"><i></i></div></article>
+        <article class="level" data-level="3"><button class="orb">4</button><span>NIVEL 4</span><h3>Estructuras de<br>control condicionales</h3><p>◷ 8 horas</p><strong>BLOQUEADO</strong><div class="mini-progress"><i></i></div></article>
+        <article class="level" data-level="4"><button class="orb">5</button><span>NIVEL 5</span><h3>Estructuras de<br>control repetitivas</h3><p>◷ 16 horas</p><strong>BLOQUEADO</strong><div class="mini-progress"><i></i></div></article>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="learn"><h2>¿QUÉ APRENDERÁS EN ESTA UNIDAD?</h2><div><span>⌨<b>Entiende los lenguajes y paradigmas.</b></span><span>🐍<b>Iníciate en Python desde cero.</b></span><span>＋<b>Domina operadores fundamentales.</b></span><span>◇<b>Aprende a tomar decisiones.</b></span><span>↻<b>Repite procesos y automatiza.</b></span></div></article>
+        <article class="rewards"><h2>RECOMPENSAS</h2><div><span>◉<b>200<br>Monedas</b></span><span>▤<b>100<br>Puntos</b></span><span>✦<b>Ninja<br>Chunin</b></span></div></article>
+        <blockquote>“ No necesito perdón.<br>Solo necesito poder suficiente<br>para proteger lo que importa. ”<cite>— Sasuke Uchiha</cite></blockquote>
+      </section>
+      <p class="tip"><img src="img/imagen_unidad3/sharingan.svg" alt=""> <b>TIP NINJA:</b> Completa las lecciones, resuelve ejercicios y gana puntos para desbloquear recompensas exclusivas.</p>
+    </section>
+  </main>
+
+  <dialog id="lesson-modal"><button class="close" aria-label="Cerrar">×</button><p class="eyebrow">MISIÓN DE PROGRAMACIÓN</p><h2 id="modal-title">Lenguajes y paradigmas</h2><p id="modal-text"></p><div class="challenge"><b>DESAFÍO RÁPIDO</b><p id="question"></p><div id="answers"></div><small id="feedback"></small></div><button id="complete">COMPLETAR MISIÓN +100 XP</button></dialog>
+  <div id="toast" role="status"></div>
+  <script src="unit3.js"></script>
+</body>
+</html>
