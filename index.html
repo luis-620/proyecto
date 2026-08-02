@@ -1,235 +1,613 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universidad Técnica de Cotopaxi</title>
+
+    <title>Luis Alexander Yugsi | Boruto Web</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="estilos.css">
+
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
-<body class="index-page">
-    <div id="particles"></div>
-    <header class="index-header">
-        <div class="header-content">
-            <span class="header-badge">Misión anime • aprendizaje</span>
-            <h1>Universidad Técnica de Cotopaxi</h1>
-            <p>Tu próxima aventura comienza aquí, con energía, disciplina y conocimiento.</p>
+
+<body>
+
+    <!-- ==========================
+            FONDO
+    =========================== -->
+
+    <div class="background">
+
+        <img src="img/fondo.jpg" class="bg">
+
+        <img src="img/energia.png" class="energia">
+
+        <img src="img/portal.png" class="portal">
+
+        <img src="img/hojas.png" class="hojas">
+
+    </div>
+
+    <!-- ==========================
+            MENU
+    =========================== -->
+
+    <header>
+
+        <div class="logo">
+
+            <i class="fa-solid fa-circle-nodes"></i>
+
+            <span>BORUTO WEB</span>
+
         </div>
+
         <nav>
+
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li class="menu">
-                    <a href="#">Unidad 1 ▼</a>
-                    <ul class="submenu">
-                        <li><a href="unidad1.html">Ver Unidad 1</a></li>
-                    </ul>
+
+                <li>
+
+                    <a href="index.html">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Inicio
+
+                    </a>
+
                 </li>
-                <li class="menu">
-                    <a href="#">Unidad 2 ▼</a>
+
+                <li class="dropdown">
+
+                    <a href="#">
+
+                        Unidad 1
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </a>
+
                     <ul class="submenu">
-                        <li><a href="unidad2.html">Ver Unidad 2</a></li>
+
+                        <li>
+
+                            <a href="unidad1.html">
+
+                                Entrar
+
+                            </a>
+
+                        </li>
+
                     </ul>
+
                 </li>
-                <li class="menu">
-                    <a href="#">Unidad 3 ▼</a>
+
+                <li class="dropdown">
+
+                    <a href="#">
+
+                        Unidad 2
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </a>
+
                     <ul class="submenu">
-                        <li><a href="unidad3.html">Ver Unidad 3</a></li>
+
+                        <li>
+
+                            <a href="unidad2.html">
+
+                                Entrar
+
+                            </a>
+
+                        </li>
+
                     </ul>
+
                 </li>
+
+                <li class="dropdown">
+
+                    <a href="#">
+
+                        Unidad 3
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </a>
+
+                    <ul class="submenu">
+
+                        <li>
+
+                            <a href="unidad3.html">
+
+                                Entrar
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
             </ul>
+
         </nav>
+
     </header>
 
-    <main class="hero-home">
-        <div class="battle-overlay" aria-hidden="true">
-            <span class="battle-line battle-line-1"></span>
-            <span class="battle-line battle-line-2"></span>
-            <span class="battle-line battle-line-3"></span>
-            <span class="cloud cloud-1"></span>
-            <span class="cloud cloud-2"></span>
-            <span class="cloud cloud-3"></span>
+    <!-- ==========================
+            HERO
+    =========================== -->
+
+    <section class="hero">
+
+        <!-- Boruto -->
+
+        <div class="hero-image">
+
+            <img src="img/chakra.png" class="chakra">
+
+            <img src="img/boruto.png" class="boruto">
+
+            <img src="img/jougan.png" class="jougan">
+
+            <img src="img/shuriken.png" class="shuriken sh1">
+
+            <img src="img/shuriken.png" class="shuriken sh2">
+
+            <img src="img/kunai.png" class="kunai">
+
         </div>
-        <section class="game-panel">
-            <div class="image-card">
-                <div class="shuriken shuriken-1"></div>
-                <div class="shuriken shuriken-2"></div>
-                <div class="shuriken shuriken-3"></div>
-                <div class="boruto-portrait" aria-label="Boruto Uzumaki con el Jougan activado">
-                    <span class="spark spark-1"></span>
-                    <span class="spark spark-2"></span>
-                    <span class="spark spark-3"></span>
-                    <span class="jougan-ring"></span>
-                    <svg viewBox="0 0 360 420" role="img" aria-hidden="true">
-                        <rect width="360" height="420" rx="30" fill="url(#bg)" />
-                        <circle cx="180" cy="150" r="86" fill="#f1c79a" />
-                        <path d="M126 154c0-58 32-104 84-104 45 0 78 36 78 98 0 47-24 84-65 96-24 7-42 6-61-2-18-7-36-21-36-88Z" fill="#2d1b12" />
-                        <path d="M145 158c10-38 42-57 77-57 34 0 58 19 70 54-10-13-24-23-43-27-23-4-56 1-70 5-8 2-19 14-34 25Z" fill="#44201a" />
-                        <path d="M132 183c10 35 36 58 70 58 34 0 59-23 73-58-8 4-18 6-29 6-20 0-39-6-61-15-13-5-29-1-53 9Z" fill="#efb887" />
-                        <path d="M160 250c14-7 35-8 56-6 24 2 41 8 49 14 17 14 21 38 21 62 0 39-31 72-72 72-40 0-71-33-71-73 0-24 7-46 17-69Z" fill="#f5d5b1" />
-                        <path d="M114 286c14-21 40-32 81-33 38-1 70 14 90 34-20 16-42 24-68 24-27 0-53-8-72-15-9-3-19-5-31-10Z" fill="#271313" />
-                        <path d="M134 218c13 4 23 12 35 12 17 0 32-7 47-12 14-5 29-6 43-3 5 1 13 4 22 8-4 18-19 33-45 44-21 9-47 9-68 0-31-12-50-31-54-49 8-4 11-5 20-1Z" fill="#ffd7a6" />
-                        <circle cx="168" cy="173" r="9" fill="#f7f2e8" />
-                        <circle cx="191" cy="173" r="9" fill="#f7f2e8" />
-                        <path d="M159 175c7 7 15 10 24 10 10 0 20-3 29-10" stroke="#2d1b12" stroke-width="4" stroke-linecap="round" />
-                        <path d="M159 146c18-14 37-21 61-21 15 0 30 3 40 8" stroke="#2d1b12" stroke-width="4" stroke-linecap="round" />
-                        <path d="M143 167c4 8 13 12 26 12 13 0 24-6 29-15" stroke="#2d1b12" stroke-width="4" stroke-linecap="round" />
-                        <circle class="jougan-eye" cx="188" cy="176" r="10" fill="#0b69c6" />
-                        <circle class="jougan-eye-core" cx="188" cy="176" r="4" fill="#ffffff" />
-                        <path d="M214 170c0-16 12-26 27-31 17-6 36-6 51-2" stroke="#7ad8ff" stroke-width="6" stroke-linecap="round" />
-                        <path d="M205 184c15-10 29-11 47-7" stroke="#7ad8ff" stroke-width="6" stroke-linecap="round" />
-                        <path d="M154 159c-12-15-26-31-44-38" stroke="#7ad8ff" stroke-width="5" stroke-linecap="round" />
-                        <path d="M190 138c20-16 49-18 77-8" stroke="#7ad8ff" stroke-width="5" stroke-linecap="round" />
-                        <circle cx="205" cy="163" r="5" fill="#fefefe" opacity="0.75" />
-                        <circle cx="179" cy="110" r="8" fill="#ffdd99" opacity="0.35" />
-                        <circle cx="240" cy="94" r="11" fill="#fefefe" opacity="0.2" />
-                        <defs>
-                            <linearGradient id="bg" x1="0" y1="0" x2="360" y2="420" gradientUnits="userSpaceOnUse">
-                                <stop offset="0%" stop-color="#091423" />
-                                <stop offset="100%" stop-color="#204b72" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="image-badge">Boruto • Jougan</div>
-                <div class="hero-caption">
-                    <h3>Luis Alexander Yugsi Parra</h3>
-                    <p>Estudiante con pasión por aprender, crecer y superar cada reto.</p>
-                </div>
+
+        <!-- Información -->
+
+        <div class="hero-info">
+
+            <span class="etiqueta">
+
+                Academia Shinobi
+
+            </span>
+
+            <h1>
+
+                Luis Alexander
+
+                <span>Yugsi Parra</span>
+
+            </h1>
+
+            <h2>
+
+                Estudiante • Deportista
+
+            </h2>
+
+            <p>
+
+                Mi nombre es <strong>Luis Alexander Yugsi Parra</strong>.
+                Nací el <strong>24 de abril de 2006</strong>.
+
+                Desde muy pequeño descubrí mi pasión por el atletismo.
+                Gracias a mi esfuerzo fui seleccionado para representar al
+                <strong>cantón El Chaco</strong>.
+
+                En mi primera competencia obtuve
+                <strong>3 medallas de oro</strong>,
+                <strong>3 medallas de plata</strong>
+                y
+                <strong>1 medalla de bronce</strong>,
+                participando en las disciplinas de
+                <strong>resistencia, velocidad y postas</strong>.
+
+                Practiqué atletismo hasta los
+                <strong>13 años</strong>.
+
+                Después, gracias a la motivación de mi hermano menor,
+                comencé a practicar fútbol,
+                iniciando una nueva etapa llena de retos,
+                disciplina y aprendizaje.
+
+            </p>
+
+            <div class="botones">
+
+                <button id="btnMision">
+
+                    Iniciar misión
+
+                </button>
+
+                <button>
+
+                    Ver perfil
+
+                </button>
+
             </div>
 
-            <div class="story-card">
-                <div class="chakra-ring"></div>
-                <div class="hero-badges">
-                    <span class="hero-badge">Academia shinobi</span>
-                    <span class="hero-badge accent">Rango: Genin</span>
-                </div>
-                <p class="eyebrow">Mi descripción</p>
-                <h2>Luis Alexander Yugsi Parra</h2>
-                <p>Mi nombre es <b>Luis Alexander Yugsi Parra</b>. Nací el <b>24 de abril de 2006</b>. Desde mi niñez me apasionó el atletismo, y gracias a mi esfuerzo fui seleccionado para representar al cantón El Chaco. En mis primeras competencias conseguí <b>3 medallas de oro, 3 medallas de plata y 1 de bronce</b> en resistencia, velocidad y postas. Más tarde, motivado por mi hermano menor, comencé a jugar fútbol, empezando una nueva etapa llena de aprendizajes y experiencias.</p>
+        </div>
 
-                <div class="stats">
-                    <div class="stat">
-                        <span id="chakra-count">0</span>
-                        <small>Chakra</small>
-                    </div>
-                    <div class="stat">
-                        <span id="rank">Novato</span>
-                        <small>Rango</small>
-                    </div>
+    </section>
+        <!--====================================
+              GALERÍA PRINCIPAL
+    =====================================-->
+
+    <section class="galeria">
+
+        <div class="titulo-seccion">
+
+            <h2>Mi Historia</h2>
+
+            <p>
+                Cada experiencia ha sido un paso más para alcanzar mis objetivos.
+            </p>
+
+        </div>
+
+        <div class="contenedor-galeria">
+
+            <div class="card-galeria">
+
+                <img src="img/foto.jpg" alt="Luis Alexander Yugsi">
+
+                <div class="contenido">
+
+                    <h3>Mi Fotografía</h3>
+
+                    <p>
+                        Una imagen que representa mi esfuerzo,
+                        disciplina y compromiso.
+                    </p>
+
                 </div>
 
-                <button id="mission-btn">Iniciar misión</button>
-                <p id="mission-text">Haz clic para acumular energía y avanzar.</p>
             </div>
-        </section>
 
-        <section class="photo-gallery" aria-label="Galería visual">
-            <div class="gallery-card">
-                <img src="img/foto.svg" alt="Foto de Luis Alexander Yugsi Parra">
-                <div class="gallery-caption">
-                    <h3>Mi foto</h3>
-                    <p>Momento de energía, disciplina y propósito.</p>
-                </div>
-            </div>
-            <div class="gallery-card">
-                <img src="img/inicio.jpg" alt="Imagen de la Universidad Técnica de Cotopaxi">
-                <div class="gallery-caption">
-                    <h3>Universidad</h3>
-                    <p>La aventura de aprender comienza aquí.</p>
-                </div>
-            </div>
-            <div class="gallery-card">
-                <div class="gallery-portrait">
-                    <div class="mini-jougan"></div>
-                    <span class="mini-star"></span>
-                </div>
-                <div class="gallery-caption">
-                    <h3>Jougan</h3>
-                    <p>Potencia del conocimiento y la determinación.</p>
-                </div>
-            </div>
-        </section>
+            <div class="card-galeria">
 
-        <section class="tarjetas">
-            <div class="card">
-                <h3>Unidad 1</h3>
-                <div class="rating">5 churiquines</div>
-                <p>Explora los fundamentos de tu camino académico.</p>
+                <img src="img/inicio.jpg" alt="Universidad">
+
+                <div class="contenido">
+
+                    <h3>Universidad Técnica de Cotopaxi</h3>
+
+                    <p>
+                        El lugar donde continúo preparándome
+                        profesionalmente.
+                    </p>
+
+                </div>
+
             </div>
-            <div class="card">
-                <h3>Unidad 2</h3>
-                <div class="rating">5 churiquines</div>
-                <p>Desarrolla nuevas habilidades para enfrentar desafíos.</p>
+
+            <div class="card-galeria">
+
+                <img src="img/jougan.png" alt="Jougan">
+
+                <div class="contenido">
+
+                    <h3>El Jougan</h3>
+
+                    <p>
+                        Simboliza la visión, el conocimiento
+                        y la superación constante.
+                    </p>
+
+                </div>
+
             </div>
-            <div class="card">
-                <h3>Unidad 3</h3>
-                <div class="rating">4 churiquines</div>
-                <p>Consolida tu conocimiento y avanza con confianza.</p>
+
+        </div>
+
+    </section>
+
+
+    <!--====================================
+            ESTADÍSTICAS SHINOBI
+    =====================================-->
+
+    <section class="estadisticas">
+
+        <div class="card-estadistica">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h2 id="chakra">0</h2>
+
+            <span>Chakra</span>
+
+        </div>
+
+        <div class="card-estadistica">
+
+            <i class="fa-solid fa-user-ninja"></i>
+
+            <h2 id="rango">
+
+                Novato
+
+            </h2>
+
+            <span>Rango</span>
+
+        </div>
+
+        <div class="card-estadistica">
+
+            <i class="fa-solid fa-medal"></i>
+
+            <h2>
+
+                7
+
+            </h2>
+
+            <span>Medallas</span>
+
+        </div>
+
+    </section>
+
+
+    <!--====================================
+               UNIDADES
+    =====================================-->
+
+    <section class="unidades">
+
+        <div class="titulo-seccion">
+
+            <h2>Mis Unidades</h2>
+
+            <p>
+
+                Explora cada misión para descubrir nuevos conocimientos.
+
+            </p>
+
+        </div>
+
+        <div class="contenedor-unidades">
+
+
+            <!-- Unidad 1 -->
+
+            <div class="unidad">
+
+                <img src="img/chakra.png" class="icono">
+
+                <h2>Unidad 1</h2>
+
+                <div class="estrellas">
+
+                    ★★★★★
+
+                </div>
+
+                <p>
+
+                    Aprende los conceptos fundamentales
+                    para comenzar la aventura.
+
+                </p>
+
+                <a href="unidad1.html">
+
+                    <button>
+
+                        Entrar
+
+                    </button>
+
+                </a>
+
             </div>
-        </section>
-    </main>
+
+
+            <!-- Unidad 2 -->
+
+            <div class="unidad">
+
+                <img src="img/portal.png" class="icono">
+
+                <h2>Unidad 2</h2>
+
+                <div class="estrellas">
+
+                    ★★★★★
+
+                </div>
+
+                <p>
+
+                    Continúa desarrollando habilidades
+                    mediante nuevos desafíos.
+
+                </p>
+
+                <a href="unidad2.html">
+
+                    <button>
+
+                        Entrar
+
+                    </button>
+
+                </a>
+
+            </div>
+
+
+            <!-- Unidad 3 -->
+
+            <div class="unidad">
+
+                <img src="img/shuriken.png" class="icono">
+
+                <h2>Unidad 3</h2>
+
+                <div class="estrellas">
+
+                    ★★★★☆
+
+                </div>
+
+                <p>
+
+                    Consolida tus conocimientos
+                    para convertirte en un verdadero shinobi.
+
+                </p>
+
+                <a href="unidad3.html">
+
+                    <button>
+
+                        Entrar
+
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!--====================================
+            LOADER
+    =====================================-->
+
+    <div class="loader" id="loader">
+
+        <div class="loader-content">
+
+            <img src="img/jougan.png" alt="Jougan">
+
+            <h2>Cargando Misión...</h2>
+
+            <div class="barra">
+
+                <div class="progreso"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--====================================
+            PARTÍCULAS
+    =====================================-->
+
+    <div class="particulas">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+    <!--====================================
+              FOOTER
+    =====================================-->
 
     <footer>
-        <p>© 2026 Universidad Técnica de Cotopaxi</p>
+
+        <div class="footer-contenido">
+
+            <div>
+
+                <h2>Luis Alexander Yugsi Parra</h2>
+
+                <p>
+
+                    Universidad Técnica de Cotopaxi
+
+                </p>
+
+            </div>
+
+            <div class="redes">
+
+                <a href="#">
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fab fa-github"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p class="copy">
+
+            © 2026 Todos los derechos reservados
+
+        </p>
+
     </footer>
 
-    <script>
-        const missionBtn = document.getElementById('mission-btn');
-        const chakraCount = document.getElementById('chakra-count');
-        const rank = document.getElementById('rank');
-        const missionText = document.getElementById('mission-text');
-        const body = document.body;
-        const particles = document.getElementById('particles');
+    <!--====================================
+            AUDIO (OPCIONAL)
+    =====================================-->
 
-        let chakra = 0;
+    <audio id="click">
 
-        function createStarParticle() {
-            const particle = document.createElement('span');
-            particle.className = 'star-particle';
-            particle.style.left = `${Math.random() * 100}%`;
-            particle.style.top = `${Math.random() * 100}%`;
-            particle.style.setProperty('--size', `${8 + Math.random() * 16}px`);
-            particle.style.setProperty('--delay', `${Math.random() * 8}s`);
-            particle.style.opacity = `${0.2 + Math.random() * 0.8}`;
-            particles.appendChild(particle);
-        }
+        <source src="audio/click.mp3" type="audio/mpeg">
 
-        for (let i = 0; i < 40; i += 1) {
-            createStarParticle();
-        }
+    </audio>
 
-        function createChakraBurst(x, y) {
-            const burst = document.createElement('div');
-            burst.className = 'chakra-burst';
-            burst.style.left = `${x}px`;
-            burst.style.top = `${y}px`;
-            body.appendChild(burst);
+    <audio id="musica" loop>
 
-            burst.addEventListener('animationend', () => burst.remove());
-        }
+        <source src="audio/fondo.mp3" type="audio/mpeg">
 
-        missionBtn.addEventListener('click', (event) => {
-            chakra += 1;
-            chakraCount.textContent = chakra;
+    </audio>
 
-            createChakraBurst(event.clientX, event.clientY);
+    <!--====================================
+            JAVASCRIPT
+    =====================================-->
 
-            const heroCard = document.querySelector('.image-card');
-            heroCard.classList.remove('mission-active');
-            void heroCard.offsetWidth;
-            heroCard.classList.add('mission-active');
-            window.setTimeout(() => heroCard.classList.remove('mission-active'), 700);
+    <script src="script.js"></script>
 
-            if (chakra < 5) {
-                rank.textContent = 'Novato';
-                missionText.textContent = 'Tu energía crece. ¡Sigue adelante!';
-            } else if (chakra < 10) {
-                rank.textContent = 'Shinobi';
-                missionText.textContent = '¡Excelente! Ya dominas el primer nivel.';
-            } else {
-                rank.textContent = 'Maestro';
-                missionText.textContent = '¡Misión cumplida! Tu camino está listo para la siguiente etapa.';
-            }
-        });
-    </script>
 </body>
+
 </html>
