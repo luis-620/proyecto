@@ -1,0 +1,1 @@
+.click-spark{position:fixed;z-index:30;width:10px;height:10px;border-radius:50%;border:2px solid var(--cyan);pointer-events:none;transform:translate(-50%,-50%);animation:click-spark .65s ease-out forwards}@keyframes click-spark{to{width:110px;height:110px;opacity:0;border-width:1px}}

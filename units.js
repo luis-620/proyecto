@@ -1,0 +1,1 @@
+document.addEventListener('pointermove',event=>{const x=(event.clientX/innerWidth-.5)*14,y=(event.clientY/innerHeight-.5)*10;document.querySelector('.unit-character').style.margin=`${y}px 0 0 ${x}px`});

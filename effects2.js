@@ -1,0 +1,1 @@
+document.addEventListener('pointerdown',event=>{if(event.target.closest('a,button,input,textarea'))return;const spark=document.createElement('i');spark.className='click-spark';spark.style.left=`${event.clientX}px`;spark.style.top=`${event.clientY}px`;document.body.append(spark);spark.addEventListener('animationend',()=>spark.remove())});
