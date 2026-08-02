@@ -1,0 +1,1398 @@
+/*==========================================
+            RESET
+==========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/*==========================================
+            VARIABLES
+==========================================*/
+
+:root{
+
+    --color-principal:#00B7FF;
+    --color-secundario:#7A3DFF;
+    --color-fondo:#050913;
+    --color-panel:#0B1325;
+    --color-panel2:#111C33;
+    --color-blanco:#FFFFFF;
+    --color-gris:#BFC8D7;
+    --color-borde:rgba(255,255,255,.08);
+
+    --sombra:0 10px 30px rgba(0,0,0,.45);
+
+    --radio:18px;
+
+    --transicion:.35s;
+
+}
+
+/*==========================================
+            BODY
+==========================================*/
+
+body{
+
+    background:var(--color-fondo);
+
+    color:var(--color-blanco);
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/*==========================================
+            FONDO
+==========================================*/
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        linear-gradient(rgba(3,8,20,.80),
+        rgba(3,8,20,.92)),
+        url("../img/fondo.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    z-index:-10;
+
+}
+
+/*==========================================
+            HEADER
+==========================================*/
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 45px;
+
+    background:rgba(5,10,20,.80);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--color-borde);
+
+    z-index:1000;
+
+}
+
+/*==========================================
+            LOGO
+==========================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.logo h2{
+
+    color:var(--color-principal);
+
+    font-size:28px;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+}
+
+/*==========================================
+            NAVBAR
+==========================================*/
+
+.header nav ul{
+
+    display:flex;
+
+    align-items:center;
+
+    list-style:none;
+
+    gap:28px;
+
+}
+
+.header nav ul li{
+
+    list-style:none;
+
+}
+
+.header nav ul li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:var(--transicion);
+
+    position:relative;
+
+}
+
+/* Línea inferior */
+
+.header nav ul li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--color-principal);
+
+    transition:.35s;
+
+}
+
+.header nav ul li a:hover{
+
+    color:var(--color-principal);
+
+}
+
+.header nav ul li a:hover::after{
+
+    width:100%;
+
+}
+
+/*==========================================
+        CONTENEDOR GENERAL
+==========================================*/
+
+.container{
+
+    display:grid;
+
+    grid-template-columns:290px 1fr;
+
+    margin-top:80px;
+
+    min-height:calc(100vh - 80px);
+
+}
+
+/*==========================================
+        CONTENIDO PRINCIPAL
+==========================================*/
+
+.contenido{
+
+    width:100%;
+
+    padding:45px;
+
+}
+
+/*==========================================
+        SECCIONES
+==========================================*/
+
+section{
+
+    margin-bottom:70px;
+
+}
+
+/*==========================================
+        TITULOS
+==========================================*/
+
+h1{
+
+    font-size:58px;
+
+    font-weight:700;
+
+    line-height:1.1;
+
+}
+
+h2{
+
+    font-size:34px;
+
+}
+
+h3{
+
+    font-size:22px;
+
+}
+
+p{
+
+    color:var(--color-gris);
+
+    line-height:1.8;
+
+}
+
+/*==========================================
+        ENLACES
+==========================================*/
+
+a{
+
+    text-decoration:none;
+
+    color:white;
+
+}
+
+/*==========================================
+        IMÁGENES
+==========================================*/
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+/*==========================================
+        BOTONES
+==========================================*/
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font-family:'Poppins',sans-serif;
+
+}
+/*==========================================
+                SIDEBAR
+==========================================*/
+
+.sidebar{
+
+    width:290px;
+
+    min-height:calc(100vh - 80px);
+
+    background:linear-gradient(
+        180deg,
+        rgba(12,20,40,.98),
+        rgba(8,13,28,.98)
+    );
+
+    border-right:1px solid var(--color-borde);
+
+    padding:30px 20px;
+
+    position:sticky;
+
+    top:80px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+/*==========================================
+                PERFIL
+==========================================*/
+
+.perfil{
+
+    text-align:center;
+
+}
+
+.perfil img{
+
+    width:150px;
+
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid var(--color-principal);
+
+    margin:auto;
+
+    box-shadow:0 0 25px rgba(0,183,255,.45);
+
+}
+
+.perfil h2{
+
+    margin-top:18px;
+
+    font-size:24px;
+
+}
+
+.perfil span{
+
+    display:inline-block;
+
+    margin-top:8px;
+
+    color:var(--color-principal);
+
+    font-size:15px;
+
+}
+
+/*==========================================
+            BARRA DE CHAKRA
+==========================================*/
+
+.chakra{
+
+    background:var(--color-panel2);
+
+    border-radius:15px;
+
+    padding:18px;
+
+    border:1px solid var(--color-borde);
+
+}
+
+.chakra h3{
+
+    font-size:18px;
+
+    margin-bottom:15px;
+
+}
+
+.barra{
+
+    width:100%;
+
+    height:12px;
+
+    background:#1d2945;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.energia{
+
+    width:80%;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        #00B7FF,
+        #39D6FF,
+        #7A3DFF
+    );
+
+}
+
+/*==========================================
+            ESTADÍSTICAS
+==========================================*/
+
+.estadisticas{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.dato{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    background:var(--color-panel2);
+
+    border-radius:15px;
+
+    border:1px solid var(--color-borde);
+
+    transition:.35s;
+
+}
+
+.dato:hover{
+
+    transform:translateX(8px);
+
+    border-color:var(--color-principal);
+
+}
+
+.dato i{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#14203d;
+
+    color:var(--color-principal);
+
+    font-size:22px;
+
+}
+
+.dato h4{
+
+    font-size:16px;
+
+}
+
+.dato p{
+
+    font-size:13px;
+
+    color:#b7c2d8;
+
+}
+
+/*==========================================
+            MENÚ LATERAL
+==========================================*/
+
+.menu-lateral{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:auto;
+
+}
+
+.menu-lateral a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    background:rgba(255,255,255,.03);
+
+    border-radius:12px;
+
+    border:1px solid transparent;
+
+    transition:.35s;
+
+    color:white;
+
+    font-weight:500;
+
+}
+
+.menu-lateral a i{
+
+    width:22px;
+
+    text-align:center;
+
+    color:var(--color-principal);
+
+    font-size:18px;
+
+}
+
+.menu-lateral a:hover{
+
+    background:rgba(0,183,255,.12);
+
+    border-color:var(--color-principal);
+
+    transform:translateX(8px);
+
+}
+
+.menu-lateral a.active{
+
+    background:linear-gradient(
+        90deg,
+        rgba(0,183,255,.25),
+        rgba(122,61,255,.20)
+    );
+
+    border-color:var(--color-principal);
+
+}
+
+/*==========================================
+            TARJETA DEL PERFIL
+==========================================*/
+
+.sidebar::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #00B7FF,
+        #7A3DFF
+    );
+
+}
+
+/*==========================================
+            SCROLL SIDEBAR
+==========================================*/
+
+.sidebar{
+
+    overflow-y:auto;
+
+}
+
+.sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.sidebar::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:#00B7FF;
+
+    border-radius:10px;
+
+}
+/*==========================================
+                HERO
+==========================================*/
+
+.hero{
+
+    width:100%;
+
+    min-height:650px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:60px;
+
+}
+
+/*==========================================
+            INFORMACIÓN
+==========================================*/
+
+.hero-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.subtitulo{
+
+    display:inline-block;
+
+    width:max-content;
+
+    padding:8px 18px;
+
+    margin-bottom:25px;
+
+    border-radius:50px;
+
+    background:rgba(0,183,255,.12);
+
+    border:1px solid rgba(0,183,255,.30);
+
+    color:var(--color-principal);
+
+    letter-spacing:2px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.hero-info h1{
+
+    font-size:70px;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+.hero-info h1 span{
+
+    display:block;
+
+    color:var(--color-principal);
+
+}
+
+.hero-info p{
+
+    max-width:650px;
+
+    font-size:18px;
+
+    margin-bottom:35px;
+
+}
+
+/*==========================================
+            HABILIDADES
+==========================================*/
+
+.habilidades{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:40px;
+
+}
+
+.habilidades span{
+
+    padding:12px 20px;
+
+    border-radius:40px;
+
+    background:var(--color-panel2);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.habilidades span:hover{
+
+    background:var(--color-principal);
+
+    transform:translateY(-5px);
+
+}
+
+/*==========================================
+                BOTONES
+==========================================*/
+
+.botones{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    width:220px;
+
+    height:60px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn i{
+
+    font-size:18px;
+
+}
+
+.btn-primario{
+
+    background:linear-gradient(
+        90deg,
+        #00B7FF,
+        #4F8DFF
+    );
+
+    color:white;
+
+}
+
+.btn-primario:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 30px rgba(0,183,255,.35);
+
+}
+
+.btn-secundario{
+
+    border:2px solid var(--color-principal);
+
+    color:var(--color-principal);
+
+    background:transparent;
+
+}
+
+.btn-secundario:hover{
+
+    background:var(--color-principal);
+
+    color:white;
+
+    transform:translateY(-6px);
+
+}
+
+/*==========================================
+            IMAGEN PRINCIPAL
+==========================================*/
+
+.hero-imagen{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero-imagen img{
+
+    width:520px;
+
+    max-width:100%;
+
+    position:relative;
+
+    z-index:5;
+
+    filter:drop-shadow(0 0 30px rgba(0,183,255,.25));
+
+}
+
+/*==========================================
+            CÍRCULO
+==========================================*/
+
+.circulo{
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+
+        rgba(0,183,255,.25),
+
+        transparent 70%
+
+    );
+
+}
+
+/*==========================================
+            HALO
+==========================================*/
+
+.halo{
+
+    position:absolute;
+
+    width:620px;
+
+    height:620px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(0,183,255,.15);
+
+}
+
+/*==========================================
+            CHAKRA
+==========================================*/
+
+.chakra-1{
+
+    position:absolute;
+
+    width:560px;
+
+    height:560px;
+
+    border-radius:50%;
+
+    border:2px dashed rgba(0,183,255,.20);
+
+}
+
+.chakra-2{
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    border:2px dashed rgba(122,61,255,.25);
+
+}
+
+/*==========================================
+        INFORMACIÓN
+==========================================*/
+
+.informacion{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.card{
+
+    padding:35px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--color-principal);
+
+}
+
+.card i{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,183,255,.12);
+
+    color:var(--color-principal);
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
+}
+
+.card h3{
+
+    margin-bottom:15px;
+
+}
+/*==========================================
+            ACCESOS RÁPIDOS
+==========================================*/
+
+.accesos{
+
+    width:100%;
+
+}
+
+.accesos h2{
+
+    margin-bottom:35px;
+
+    font-size:34px;
+
+    color:var(--color-blanco);
+
+}
+
+.grid-accesos{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+.acceso{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.acceso:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--color-principal);
+
+    box-shadow:0 15px 40px rgba(0,183,255,.18);
+
+}
+
+.acceso i{
+
+    font-size:50px;
+
+    color:var(--color-principal);
+
+    margin-bottom:20px;
+
+}
+
+.acceso h3{
+
+    margin-bottom:15px;
+
+}
+
+.acceso p{
+
+    font-size:15px;
+
+}
+
+/*==========================================
+            ESTADÍSTICAS
+==========================================*/
+
+.estadisticas-web{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.stat{
+
+    background:rgba(255,255,255,.03);
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.stat:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--color-principal);
+
+}
+
+.stat h2{
+
+    font-size:52px;
+
+    color:var(--color-principal);
+
+    margin-bottom:10px;
+
+}
+
+.stat p{
+
+    font-size:17px;
+
+}
+
+/*==========================================
+            REDES
+==========================================*/
+
+.redes{
+
+    text-align:center;
+
+}
+
+.redes h2{
+
+    margin-bottom:30px;
+
+}
+
+.iconos-redes{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.iconos-redes a{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    color:white;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.iconos-redes a:hover{
+
+    background:var(--color-principal);
+
+    transform:translateY(-8px) rotate(360deg);
+
+}
+
+/*==========================================
+            BOTÓN SUBIR
+==========================================*/
+
+#btn-arriba{
+
+    position:fixed;
+
+    right:35px;
+
+    bottom:35px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        #00B7FF,
+        #7A3DFF
+    );
+
+    color:white;
+
+    font-size:24px;
+
+    box-shadow:0 10px 25px rgba(0,183,255,.35);
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+#btn-arriba:hover{
+
+    transform:translateY(-8px) scale(1.08);
+
+}
+
+/*==========================================
+                FOOTER
+==========================================*/
+
+footer{
+
+    margin-top:90px;
+
+    padding:45px 20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+}
+
+.footer-logo h2{
+
+    color:var(--color-principal);
+
+    margin-bottom:10px;
+
+}
+
+.footer-menu{
+
+    display:flex;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.footer-menu a{
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.footer-menu a:hover{
+
+    color:var(--color-principal);
+
+}
+
+.footer-copy{
+
+    color:#bfc8d7;
+
+    font-size:15px;
+
+}
+
+/*==========================================
+        EFECTO GLASS
+==========================================*/
+
+.card,
+.stat,
+.acceso,
+.sidebar,
+.chakra{
+
+    backdrop-filter:blur(12px);
+
+}
+
+/*==========================================
+        SELECCIÓN DE TEXTO
+==========================================*/
+
+::selection{
+
+    background:var(--color-principal);
+
+    color:white;
+
+}
+
+/*==========================================
+        SCROLL
+==========================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#08101d;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+        #00B7FF,
+        #7A3DFF
+    );
+
+    border-radius:20px;
+
+}

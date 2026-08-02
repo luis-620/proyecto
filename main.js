@@ -1,0 +1,1 @@
+console.log("Boruto Web iniciada");

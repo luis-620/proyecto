@@ -1,0 +1,1042 @@
+/*=========================================
+        COMPONENTES GENERALES
+=========================================*/
+
+.glass{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.30);
+
+}
+
+/*=========================================
+        BOTONES
+=========================================*/
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:200px;
+
+    height:60px;
+
+    padding:0 35px;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    transition:.7s;
+
+}
+
+.btn:hover::before{
+
+    left:120%;
+
+}
+
+.btn-primario{
+
+    background:linear-gradient(
+
+        90deg,
+
+        #00B7FF,
+
+        #3F8BFF,
+
+        #7A3DFF
+
+    );
+
+    color:white;
+
+    box-shadow:
+
+        0 0 20px rgba(0,183,255,.35);
+
+}
+
+.btn-primario:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 0 40px rgba(0,183,255,.55);
+
+}
+
+.btn-secundario{
+
+    border:2px solid #00B7FF;
+
+    color:#00B7FF;
+
+    background:transparent;
+
+}
+
+.btn-secundario:hover{
+
+    background:#00B7FF;
+
+    color:white;
+
+}
+
+/*=========================================
+        ETIQUETAS
+=========================================*/
+
+.habilidades span{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:12px 22px;
+
+    border-radius:40px;
+
+    background:#111C33;
+
+    transition:.35s;
+
+}
+
+.habilidades span:hover{
+
+    background:#00B7FF;
+
+    color:white;
+
+}
+
+/*=========================================
+        TARJETA PERFIL
+=========================================*/
+
+.perfil{
+
+    position:relative;
+
+}
+
+.perfil::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+
+        rgba(0,183,255,.18),
+
+        transparent
+
+    );
+
+    z-index:-1;
+
+}
+
+/*=========================================
+        BARRA CHAKRA
+=========================================*/
+
+.barra{
+
+    position:relative;
+
+}
+
+.energia{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.energia::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.4),
+
+        transparent
+
+    );
+
+    animation:energiaMove 2.5s linear infinite;
+
+}
+
+@keyframes energiaMove{
+
+    from{
+
+        transform:translateX(-100%);
+
+    }
+
+    to{
+
+        transform:translateX(100%);
+
+    }
+
+}
+
+/*=========================================
+        ICONOS
+=========================================*/
+
+i{
+
+    transition:.35s;
+
+}
+
+.dato:hover i{
+
+    transform:rotate(-10deg) scale(1.15);
+
+}
+
+/*=========================================
+        PANEL
+=========================================*/
+
+.sidebar{
+
+    box-shadow:
+
+        15px 0 40px rgba(0,0,0,.35);
+
+}
+
+/*=========================================
+        TITULOS
+=========================================*/
+
+.hero-info h1{
+
+    text-shadow:
+
+        0 0 20px rgba(0,183,255,.25);
+
+}
+
+.hero-info h1 span{
+
+    color:#00B7FF;
+
+}
+
+/*=========================================
+        SUBTITULO
+=========================================*/
+
+.subtitulo{
+
+    box-shadow:
+
+        0 0 15px rgba(0,183,255,.15);
+
+}
+
+/*=========================================
+        IMAGEN
+=========================================*/
+
+.hero-imagen img{
+
+    transition:.45s;
+
+}
+
+.hero-imagen:hover img{
+
+    transform:scale(1.03);
+
+}
+
+/*=========================================
+        CÍRCULO
+=========================================*/
+
+.circulo{
+
+    filter:blur(10px);
+
+    opacity:.8;
+
+}
+
+/*=========================================
+        HALO
+=========================================*/
+
+.halo{
+
+    opacity:.35;
+
+}
+
+/*=========================================
+        CHAKRA
+=========================================*/
+
+.chakra-1{
+
+    opacity:.30;
+
+}
+
+.chakra-2{
+
+    opacity:.22;
+
+}
+/*=========================================
+            TARJETAS
+=========================================*/
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.45s;
+
+    cursor:pointer;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+
+    transition:.8s;
+
+}
+
+.card:hover::before{
+
+    left:120%;
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+        0 20px 45px rgba(0,183,255,.20);
+
+}
+
+.card h3{
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    color:#BFC8D7;
+
+}
+
+.card i{
+
+    transition:.4s;
+
+}
+
+.card:hover i{
+
+    transform:rotate(10deg) scale(1.15);
+
+    color:#00B7FF;
+
+}
+
+/*=========================================
+            ACCESOS
+=========================================*/
+
+.acceso{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.acceso::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        rgba(0,183,255,.08),
+        transparent,
+        rgba(122,61,255,.08)
+    );
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.acceso:hover::before{
+
+    opacity:1;
+
+}
+
+.acceso:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.acceso h3{
+
+    margin-top:15px;
+
+    color:white;
+
+}
+
+.acceso p{
+
+    color:#bfc8d7;
+
+}
+
+.acceso i{
+
+    transition:.4s;
+
+}
+
+.acceso:hover i{
+
+    transform:scale(1.25) rotate(-8deg);
+
+}
+
+/*=========================================
+            ESTADÍSTICAS
+=========================================*/
+
+.stat{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.stat::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #00B7FF,
+        #7A3DFF
+    );
+
+}
+
+.stat:hover{
+
+    box-shadow:
+        0 18px 35px rgba(0,183,255,.18);
+
+}
+
+.stat h2{
+
+    transition:.35s;
+
+}
+
+.stat:hover h2{
+
+    transform:scale(1.15);
+
+}
+
+/*=========================================
+        REDES SOCIALES
+=========================================*/
+
+.iconos-redes a{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.iconos-redes a::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120%;
+
+    height:120%;
+
+    background:radial-gradient(
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transform:scale(0);
+
+    transition:.4s;
+
+}
+
+.iconos-redes a:hover::before{
+
+    transform:scale(2);
+
+}
+
+.iconos-redes a:hover{
+
+    box-shadow:
+        0 0 25px rgba(0,183,255,.45);
+
+}
+
+/*=========================================
+            BOTÓN SUBIR
+=========================================*/
+
+#btn-arriba{
+
+    transition:.35s;
+
+}
+
+#btn-arriba:hover{
+
+    box-shadow:
+        0 0 30px rgba(0,183,255,.55);
+
+}
+
+/*=========================================
+            FOOTER
+=========================================*/
+
+footer{
+
+    position:relative;
+
+}
+
+footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #00B7FF,
+        transparent
+    );
+
+}
+
+.footer-menu a{
+
+    position:relative;
+
+}
+
+.footer-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-6px;
+
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:#00B7FF;
+
+    transition:.35s;
+
+}
+
+.footer-menu a:hover::after{
+
+    width:100%;
+
+}
+
+/*=========================================
+            GLASS EFFECT
+=========================================*/
+
+.card,
+.stat,
+.acceso{
+
+    backdrop-filter:blur(15px);
+
+}
+
+/*=========================================
+        SOMBRAS
+=========================================*/
+
+.card,
+.stat,
+.acceso,
+.sidebar{
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.35);
+
+}
+/*==========================================
+        EFECTOS DE ENFOQUE
+==========================================*/
+
+a:focus,
+button:focus{
+
+    outline:none;
+
+    box-shadow:
+        0 0 0 3px rgba(0,183,255,.35);
+
+}
+
+/*==========================================
+        BOTONES ACTIVOS
+==========================================*/
+
+.btn:active{
+
+    transform:scale(.96);
+
+}
+
+.menu-lateral a:active{
+
+    transform:translateX(5px) scale(.98);
+
+}
+
+/*==========================================
+        TARJETAS
+==========================================*/
+
+.card,
+.acceso,
+.stat{
+
+    position:relative;
+
+    isolation:isolate;
+
+}
+
+.card::after,
+.acceso::after,
+.stat::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    padding:1px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(0,183,255,.35),
+        transparent,
+        rgba(122,61,255,.35)
+    );
+
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+            mask-composite:exclude;
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.card:hover::after,
+.acceso:hover::after,
+.stat:hover::after{
+
+    opacity:1;
+
+}
+
+/*==========================================
+        ICONOS
+==========================================*/
+
+.card i,
+.acceso i,
+.dato i{
+
+    transition:
+        transform .35s,
+        color .35s,
+        text-shadow .35s;
+
+}
+
+.card:hover i,
+.acceso:hover i,
+.dato:hover i{
+
+    text-shadow:
+        0 0 15px rgba(0,183,255,.6);
+
+}
+
+/*==========================================
+        PERFIL
+==========================================*/
+
+.perfil img{
+
+    transition:
+        transform .4s,
+        box-shadow .4s;
+
+}
+
+.perfil img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+        0 0 30px rgba(0,183,255,.55);
+
+}
+
+/*==========================================
+        CHAKRA
+==========================================*/
+
+.chakra{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.chakra::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-100%;
+
+    background:
+        radial-gradient(
+            rgba(0,183,255,.08),
+            transparent 70%
+        );
+
+    pointer-events:none;
+
+}
+
+/*==========================================
+        HERO
+==========================================*/
+
+.hero-info p{
+
+    text-align:justify;
+
+}
+
+.hero-info{
+
+    animation:fadeHero .8s ease;
+
+}
+
+@keyframes fadeHero{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================
+        TRANSICIONES
+==========================================*/
+
+a,
+button,
+.card,
+.stat,
+.acceso,
+.dato,
+img{
+
+    transition:all .35s ease;
+
+}
+
+/*==========================================
+        BADGES
+==========================================*/
+
+.habilidades span{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+}
+
+/*==========================================
+        FOOTER
+==========================================*/
+
+.footer-copy{
+
+    opacity:.8;
+
+}
+
+.footer-copy:hover{
+
+    opacity:1;
+
+}
+
+/*==========================================
+        BOTÓN ARRIBA
+==========================================*/
+
+#btn-arriba{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#btn-arriba i{
+
+    transition:.35s;
+
+}
+
+#btn-arriba:hover i{
+
+    transform:translateY(-4px);
+
+}
+
+/*==========================================
+        SEPARADOR
+==========================================*/
+
+section:not(:last-child){
+
+    position:relative;
+
+}
+
+section:not(:last-child)::after{
+
+    content:"";
+
+    display:block;
+
+    width:100%;
+
+    height:1px;
+
+    margin-top:70px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+}
+
+/*==========================================
+        FIN COMPONENTS.CSS
+==========================================*/
