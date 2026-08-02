@@ -39,9 +39,21 @@
     </header>
 
     <main class="hero-home">
+        <div class="battle-overlay" aria-hidden="true">
+            <span class="battle-line battle-line-1"></span>
+            <span class="battle-line battle-line-2"></span>
+            <span class="battle-line battle-line-3"></span>
+        </div>
         <section class="game-panel">
             <div class="image-card">
+                <div class="shuriken shuriken-1"></div>
+                <div class="shuriken shuriken-2"></div>
+                <div class="shuriken shuriken-3"></div>
                 <div class="boruto-portrait" aria-label="Boruto Uzumaki con el Jougan activado">
+                    <span class="spark spark-1"></span>
+                    <span class="spark spark-2"></span>
+                    <span class="spark spark-3"></span>
+                    <span class="jougan-ring"></span>
                     <svg viewBox="0 0 360 420" role="img" aria-hidden="true">
                         <rect width="360" height="420" rx="30" fill="url(#bg)" />
                         <circle cx="180" cy="150" r="86" fill="#f1c79a" />
@@ -56,8 +68,8 @@
                         <path d="M159 175c7 7 15 10 24 10 10 0 20-3 29-10" stroke="#2d1b12" stroke-width="4" stroke-linecap="round" />
                         <path d="M159 146c18-14 37-21 61-21 15 0 30 3 40 8" stroke="#2d1b12" stroke-width="4" stroke-linecap="round" />
                         <path d="M143 167c4 8 13 12 26 12 13 0 24-6 29-15" stroke="#2d1b12" stroke-width="4" stroke-linecap="round" />
-                        <circle cx="188" cy="176" r="10" fill="#0b69c6" />
-                        <circle cx="188" cy="176" r="4" fill="#ffffff" />
+                        <circle class="jougan-eye" cx="188" cy="176" r="10" fill="#0b69c6" />
+                        <circle class="jougan-eye-core" cx="188" cy="176" r="4" fill="#ffffff" />
                         <path d="M214 170c0-16 12-26 27-31 17-6 36-6 51-2" stroke="#7ad8ff" stroke-width="6" stroke-linecap="round" />
                         <path d="M205 184c15-10 29-11 47-7" stroke="#7ad8ff" stroke-width="6" stroke-linecap="round" />
                         <path d="M154 159c-12-15-26-31-44-38" stroke="#7ad8ff" stroke-width="5" stroke-linecap="round" />
@@ -106,6 +118,33 @@
             </div>
         </section>
 
+        <section class="photo-gallery" aria-label="Galería visual">
+            <div class="gallery-card">
+                <img src="img/foto.jpg" alt="Foto de Luis Alexander Yugsi Parra">
+                <div class="gallery-caption">
+                    <h3>Mi foto</h3>
+                    <p>Momento de energía, disciplina y propósito.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="img/inicio.jpg" alt="Imagen de la Universidad Técnica de Cotopaxi">
+                <div class="gallery-caption">
+                    <h3>Universidad</h3>
+                    <p>La aventura de aprender comienza aquí.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-portrait">
+                    <div class="mini-jougan"></div>
+                    <span class="mini-star"></span>
+                </div>
+                <div class="gallery-caption">
+                    <h3>Jougan</h3>
+                    <p>Potencia del conocimiento y la determinación.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="tarjetas">
             <div class="card">
                 <h3>Unidad 1</h3>
@@ -134,12 +173,31 @@
         const chakraCount = document.getElementById('chakra-count');
         const rank = document.getElementById('rank');
         const missionText = document.getElementById('mission-text');
+        const body = document.body;
 
         let chakra = 0;
 
-        missionBtn.addEventListener('click', () => {
+        function createChakraBurst(x, y) {
+            const burst = document.createElement('div');
+            burst.className = 'chakra-burst';
+            burst.style.left = `${x}px`;
+            burst.style.top = `${y}px`;
+            body.appendChild(burst);
+
+            burst.addEventListener('animationend', () => burst.remove());
+        }
+
+        missionBtn.addEventListener('click', (event) => {
             chakra += 1;
             chakraCount.textContent = chakra;
+
+            createChakraBurst(event.clientX, event.clientY);
+
+            const heroCard = document.querySelector('.image-card');
+            heroCard.classList.remove('mission-active');
+            void heroCard.offsetWidth;
+            heroCard.classList.add('mission-active');
+            window.setTimeout(() => heroCard.classList.remove('mission-active'), 700);
 
             if (chakra < 5) {
                 rank.textContent = 'Novato';
