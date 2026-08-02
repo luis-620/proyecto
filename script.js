@@ -27,6 +27,8 @@ const contador=document.getElementById("chakra");
 
 const boton=document.getElementById("btnMision");
 
+const foto=document.querySelector(".foto");
+
 if(boton){
 
 boton.addEventListener("click",()=>{
@@ -575,10 +577,8 @@ energia.style.transform="scale(1)";
 
 
 /*=========================================
-        BRILLO DE LA FOTO
+    BRILLO DE LA FOTO
 =========================================*/
-
-const foto=document.querySelector(".foto");
 
 if(foto){
 
