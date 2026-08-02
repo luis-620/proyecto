@@ -17,6 +17,34 @@ body {
     cursor: crosshair;
 }
 
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    background: #020611;
+}
+
+.loader-circle {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: 6px solid rgba(255,255,255,0.16);
+    border-top-color: #00c8ff;
+    animation: spin 1s linear infinite;
+}
+
+#loader h2 {
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
 body::before {
     content: '';
     position: fixed;
