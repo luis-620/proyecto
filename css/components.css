@@ -812,6 +812,8 @@ button:focus{
     opacity:0;
 
     transition:.35s;
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
 
 }
 
