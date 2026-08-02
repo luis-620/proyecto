@@ -42,7 +42,7 @@ body::before{
 
     background:
     linear-gradient(rgba(4,8,25,.82),rgba(3,6,18,.88)),
-    url("img/fondo.jpg");
+    url("img/fondo.png");
 
     background-size:cover;
     background-position:center;
