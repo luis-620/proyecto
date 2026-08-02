@@ -769,58 +769,52 @@ button:focus{
 /*==========================================
         TARJETAS
 ==========================================*/
-
 .card,
 .acceso,
-.stat{
-
-    position:relative;
-
-    isolation:isolate;
-
+.stat {
+    position: relative;
+    isolation: isolate;
 }
 
 .card::after,
 .acceso::after,
-.stat::after{
+.stat::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
 
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:inherit;
-
-    padding:1px;
-
-    background:linear-gradient(
+    background: linear-gradient(
         135deg,
-        rgba(0,183,255,.35),
+        rgba(0, 183, 255, .35),
         transparent,
-        rgba(122,61,255,.35)
+        rgba(122, 61, 255, .35)
     );
 
-    -webkit-mask: 
+    -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
 
-    -webkit-mask-composite:xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
 
-            mask-composite:exclude;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
 
-    opacity:0;
-
-    
+    opacity: 0;
+    transition: opacity .35s;
 }
-
 .card:hover::after,
 .acceso:hover::after,
-.stat:hover::after{
-
-    opacity:1;
-
+.stat:hover::after {
+    opacity: 1;
+    transition:.35s;
+ 
+ 
 }
+
 
 /*==========================================
         ICONOS
