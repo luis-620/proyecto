@@ -12,10 +12,10 @@
   <a class="brand" href="index.html#unidades">KAWAKI <small>RUTA DEL CONOCIMIENTO</small></a>
   <div class="level"><img src="img/imagen_unidad1/avatar-kawaki.png" alt="Avatar"><span><b>Nivel 1</b><i><em id="xpbar"></em></i><small id="xp">150 / 500 XP</small></span></div>
   <div class="resource">⚡ <b>25/25</b> <strong>＋</strong></div><div class="resource coin">◎ <b>230</b> <strong>＋</strong></div><div class="resource gem">◆ <b>15</b> <strong>＋</strong></div>
-  <div class="tools">🏆　▣　⚙</div>
+  <div class="tools"><button data-panel="logros" aria-label="Ver logros">🏆</button><button data-panel="inventario" aria-label="Ver inventario">▣</button><button data-panel="ayuda" aria-label="Ver ayuda">⚙</button></div>
 </header>
 <aside class="sidebar">
-  <nav><a class="selected" href="#mapa">⌑ <span>MAPA</span></a><a href="#inventario">♟ <span>INVENTARIO</span></a><a href="#ranking">▥ <span>RANKING</span></a><a href="#logros">♜ <span>LOGROS</span></a><a href="#ayuda">? <span>AYUDA</span></a></nav>
+  <nav><button class="selected" data-panel="mapa">⌑ <span>MAPA</span></button><button data-panel="inventario">♟ <span>INVENTARIO</span></button><button data-panel="ranking">▥ <span>RANKING</span></button><button data-panel="logros">♜ <span>LOGROS</span></button><button data-panel="ayuda">? <span>AYUDA</span></button></nav>
   <img class="side-character" src="img/imagen_unidad1/kawaki-lateral.png" alt="Kawaki">
   <section class="mission"><b>MISIÓN ACTUAL</b><p>Responde correctamente<br>5 preguntas seguidas</p><p>Recompensa:　<span>◆</span> 20</p><div><i id="missionbar"></i></div><small id="missioncount">0 / 5</small></section>
 </aside>
@@ -76,5 +76,6 @@
   </div>
 </section>
 <aside class="karma"><img src="img/imagen_unidad1/karma-panel.png" alt="Kawaki con energía karma"><div><b>KARMA ACTIVO</b><p>45%</p><i><em></em></i><q>El conocimiento es poder.<br>Domina cada concepto y<br>nadie podrá detenerte.</q></div></aside>
+<dialog id="modal"><button class="close" aria-label="Cerrar">×</button><div id="modal-content"></div></dialog>
 <script src="unit1-reference.js"></script>
 </body></html>
