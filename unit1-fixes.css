@@ -1,0 +1,2 @@
+/* Evita que el panel Karma cubra las opciones de las preguntas. */
+@media (min-width:1151px){.karma{position:relative;top:auto;right:auto;bottom:auto;margin:0 18px 22px auto;width:470px}}
